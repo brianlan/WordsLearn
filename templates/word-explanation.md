@@ -1,29 +1,29 @@
-# master
+# {{ word }}
 ### Pronunciation
-- US: /ˈmæstər/
-- UK: /ˈmɑːstər/
+- US: {{ american_ipa }}
+- UK: {{ british_ipa }}
 ### Explanation
-##### noun
-- A **master** is a person who is very skilled at doing something or who knows a lot about a particular subject.
-##### verb
-- If you **master** a skill or subject, you gain complete knowledge or skill in it.
+{% for meaning in meanings %}
+##### {{ meaning.part_of_speech }}
+- {{ meaning.explanation }}
+{% endfor %}
 ### Example sentence
-##### noun
-- My uncle is a **master** of making wooden toys.
-- This beautiful painting was made by a famous **master**.
-- After ten years of practice, she became a **master** of piano.
-##### verb
-- It takes lots of practice to **master** a new language.
-- He swims every day to **master** the skill.
-- You must **master** basic math first.
+{% for meaning in meanings %}
+##### {{ meaning.part_of_speech }}
+{% for example in meaning.examples %}
+- {{ example.english }}
+  {{ example.chinese }}
+{% endfor %}
+{% endfor %}
 ### Synonyms
-- expert, maestro, professional
-- grasp, acquire, perfect
+{% for meaning in meanings %}
+- {{ meaning.synonyms | join(", ") }}
+{% endfor %}
 ### Derived forms
-- masterly (adj.)
-- masterful (adj.)
-- mastery (n.)
+{% for form in derived_forms %}
+- {{ form }}
+{% endfor %}
 ### Related word partners
-- master key
-- master a language
-- dragon master
+{% for partner in related_word_partners %}
+- {{ partner }}
+{% endfor %}

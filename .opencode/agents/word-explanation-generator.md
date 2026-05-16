@@ -88,4 +88,4 @@ An example output:
 }
 ```
 
-You should only output the JSON, no more no less.
+You should only output a valid JSON (without ```json ``` wrapper), no more no less.

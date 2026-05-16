@@ -6,6 +6,7 @@ from pathlib import Path
 
 from tqdm import tqdm
 from loguru import logger
+from jinja2 import Template
 
 
 def parent_ensured_path(path: str | Path):
@@ -28,6 +29,7 @@ def parse_args() -> argparse.Namespace:
 def main(args) -> None:
     vocabulary = merge_vocabularies(read_vocabularies(args.vocabularies))
     explanations = generate_expalantions(vocabulary, args.explanations_path, args.models, startover=args.startover)
+    write_expalantions(explanations, args.explanation_path)
     flash_cards = generate_remnote_flash_cards(explanations)
     write_flash_cards(flash_cards, args.output_path)
 
@@ -57,8 +59,11 @@ def generate_expalantions(
 
 def read_explanations(explanations_path: Path) -> dict[str, dict]:
     logger.info(f"Reading explanations from {explanations_path}.")
-    with open(explanations_path) as f:
-        return json.load(f)
+    try:
+        with open(explanations_path) as f:
+            return json.load(f)
+    except FileNotFoundError:
+        return {}
 
 
 def write_expalantions(explanations: dict[str, dict], explanations_path: Path) -> None:
@@ -78,7 +83,7 @@ def get_explanation(word: str, models: itertools.cycle) -> dict:
     if result.returncode != 0:
         logger.error("opencode failed: {}", result.stderr.strip())
         return {}
-    result_dict = json.loads(result)
+    result_dict = json.loads(result.stdout)
     return result_dict
 
 
@@ -95,11 +100,14 @@ def generate_remnote_flash_cards(explanations: dict[str, dict]) -> list[str]:
 
 
 def generate_full_explanation_markdown_format(explanation: dict) -> str:
-    raise NotImplementedError
+    template = Template(Path("templates/word-explanation.md").read_text())
+    return template.render(**explanation).strip()
 
 
 def write_flash_cards(flash_cards: list[str], output_path: Path) -> None:
-    raise NotImplementedError
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    output_path.write_text("\n".join(flash_cards), encoding="utf-8")
+    logger.info(f"Successfully wrote {len(flash_cards)} flash cards to {output_path}.")
 
 
 if __name__ == "__main__":

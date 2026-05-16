@@ -67,8 +67,8 @@ def read_explanations(explanations_path: Path) -> dict[str, dict]:
 
 
 def write_expalantions(explanations: dict[str, dict], explanations_path: Path) -> None:
-    with open(explanations_path, "w") as f:
-        json.dump(explanations, f)
+    with open(explanations_path, "w", encoding="utf-8") as f:
+        json.dump(explanations, f, ensure_ascii=False)
     logger.info(f"Successfully write explanations ({len(explanations)} words) to {explanations_path}.")
 
 

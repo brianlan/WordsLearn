@@ -1,29 +1,28 @@
-# {{ word }}
-### Pronunciation
+### {{ word }}
+#### Pronunciation
 - US: {{ american_ipa }}
 - UK: {{ british_ipa }}
-### Explanation
+#### Explanation
 {% for meaning in meanings %}
 ##### {{ meaning.part_of_speech }}
 - {{ meaning.explanation }}
 {% endfor %}
-### Example sentence
+#### Example sentence
 {% for meaning in meanings %}
 ##### {{ meaning.part_of_speech }}
 {% for example in meaning.examples %}
 - {{ example.english }}
-  {{ example.chinese }}
 {% endfor %}
 {% endfor %}
-### Synonyms
+#### Synonyms
 {% for meaning in meanings %}
 - {{ meaning.synonyms | join(", ") }}
 {% endfor %}
-### Derived forms
+#### Derived forms
 {% for form in derived_forms %}
 - {{ form }}
 {% endfor %}
-### Related word partners
+#### Related word partners
 {% for partner in related_word_partners %}
 - {{ partner }}
 {% endfor %}

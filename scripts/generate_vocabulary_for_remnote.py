@@ -29,7 +29,7 @@ def parse_args() -> argparse.Namespace:
 def main(args) -> None:
     vocabulary = merge_vocabularies(read_vocabularies(args.vocabularies))
     explanations = generate_expalantions(vocabulary, args.explanations_path, args.models, startover=args.startover)
-    write_expalantions(explanations, args.explanation_path)
+    write_expalantions(explanations, args.explanations_path)
     flash_cards = generate_remnote_flash_cards(explanations)
     write_flash_cards(flash_cards, args.output_path)
 
@@ -90,12 +90,12 @@ def get_explanation(word: str, models: itertools.cycle) -> dict:
 def generate_remnote_flash_cards(explanations: dict[str, dict]) -> list[str]:
     flash_cards: list[str] = []
     for word, explanation in explanations.items():
-        en_card = f"{word}=={generate_full_explanation_markdown_format(explanation)}"
-        flash_cards.append(en_card)
+        en_card = generate_full_explanation_markdown_format(explanation)
+        flash_cards.extend(["\n", en_card])
         for meaning in explanation["meanings"]:
             for example_sentence in meaning["examples"]:
                 zh_card = f"{example_sentence['chinese']}=={word}"
-                flash_cards.append(zh_card)
+                flash_cards.extend(["\n", zh_card])
     return flash_cards
 
 

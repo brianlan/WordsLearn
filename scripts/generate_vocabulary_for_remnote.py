@@ -28,7 +28,8 @@ def parse_args() -> argparse.Namespace:
 def main(args) -> None:
     vocabulary = merge_vocabularies(read_vocabularies(args.vocabularies))
     explanations = generate_expalantions(vocabulary, args.explanations_path, args.models, startover=args.startover)
-    generate_remnote_flash_cards(explanations, args.output_path)
+    flash_cards = generate_remnote_flash_cards(explanations)
+    write_flash_cards(flash_cards, args.output_path)
 
 
 def read_vocabularies(vocabulary_paths: list[Path]) -> list[list[str]]:
@@ -81,11 +82,24 @@ def get_explanation(word: str, models: itertools.cycle) -> dict:
     return result_dict
 
 
-def generate_remnote_flash_cards(explanations: dict[str, dict], output_path: Path) -> None:
-    flash_cards = []
-    for word, exp in explanations.items():
-        eng = ""
-        flash_cards.append(eng)
+def generate_remnote_flash_cards(explanations: dict[str, dict]) -> list[str]:
+    flash_cards: list[str] = []
+    for word, explanation in explanations.items():
+        en_card = f"{word}=={generate_full_explanation_markdown_format(explanation)}"
+        flash_cards.append(en_card)
+        for meaning in explanation["meanings"]:
+            for example_sentence in meaning["examples"]:
+                zh_card = f"{example_sentence['chinese']}=={word}"
+                flash_cards.append(zh_card)
+    return flash_cards
+
+
+def generate_full_explanation_markdown_format(explanation: dict) -> str:
+    raise NotImplementedError
+
+
+def write_flash_cards(flash_cards: list[str], output_path: Path) -> None:
+    raise NotImplementedError
 
 
 if __name__ == "__main__":

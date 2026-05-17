@@ -97,7 +97,7 @@ def write_expalantions(explanations: dict[str, dict], explanations_path: Path) -
     logger.info(f"Successfully write explanations ({len(explanations)} words) to {explanations_path}.")
 
 
-def get_explanation(word: str, get_model: Callable[[], str], max_retries: int = 1) -> dict:
+def get_explanation(word: str, get_model: Callable[[], str], max_retries: int = 2) -> dict:
     for attempt in range(max_retries + 1):
         model = get_model()
         prompt = f"Generate the explanation for word: {word}."

@@ -1,7 +1,10 @@
 import argparse
-import subprocess
+import concurrent.futures
 import itertools
 import json
+import subprocess
+import threading
+from collections.abc import Callable
 from pathlib import Path
 
 from tqdm import tqdm
@@ -25,6 +28,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--models", nargs="+", type=str, required=True)
     parser.add_argument("--explanations-path", type=parent_ensured_path, required=True)
     parser.add_argument("--startover", default=False, action="store_true")
+    parser.add_argument("--num-workers", type=int, default=1)
     args = parser.parse_args()
     args.models = itertools.cycle(args.models)
     return args
@@ -32,7 +36,7 @@ def parse_args() -> argparse.Namespace:
 
 def main(args) -> None:
     vocabulary = merge_vocabularies(read_vocabularies(args.vocabularies))
-    explanations = generate_expalantions(vocabulary, args.explanations_path, args.models, startover=args.startover)
+    explanations = generate_expalantions(vocabulary, args.explanations_path, args.models, startover=args.startover, num_workers=args.num_workers)
     write_expalantions(explanations, args.explanations_path)
     flash_cards = generate_remnote_flash_cards(explanations)
     write_flash_cards(flash_cards, args.output_path)
@@ -47,19 +51,33 @@ def merge_vocabularies(vocabularies: list[list[str]]) -> set[str]:
 
 
 def generate_expalantions(
-    vocabulary: set[str], explanations_path: Path, models: itertools.cycle, startover: bool = False
+    vocabulary: set[str], explanations_path: Path, models: itertools.cycle, startover: bool = False, num_workers: int = 1
 ) -> dict[str, dict]:
     logger.info(f"Generating explanations for {len(vocabulary)} words.")
     explanations: dict[str, dict] = {}
     if not startover:
         explanations = read_explanations(explanations_path)
 
-    for word in tqdm(sorted(vocabulary)):
-        if word not in explanations:
-            try:
-                explanations[word] = get_explanation(word, models=models)
-            except GetExplanationError:
-                logger.error("Max retries exceeded for word '{}', skipping.", word)
+    words_to_process = [word for word in sorted(vocabulary) if word not in explanations]
+    model_lock = threading.Lock()
+
+    def get_model() -> str:
+        with model_lock:
+            return next(models)
+
+    def explain_word(word: str) -> tuple[str, dict | None]:
+        try:
+            return word, get_explanation(word, get_model=get_model)
+        except GetExplanationError:
+            logger.error("Max retries exceeded for word '{}', skipping.", word)
+            return word, None
+
+    with concurrent.futures.ThreadPoolExecutor(max_workers=num_workers) as executor:
+        futures = [executor.submit(explain_word, word) for word in words_to_process]
+        for future in tqdm(concurrent.futures.as_completed(futures), total=len(words_to_process)):
+            word, result = future.result()
+            if result is not None:
+                explanations[word] = result
 
     return explanations
 
@@ -79,9 +97,9 @@ def write_expalantions(explanations: dict[str, dict], explanations_path: Path) -
     logger.info(f"Successfully write explanations ({len(explanations)} words) to {explanations_path}.")
 
 
-def get_explanation(word: str, models: itertools.cycle, max_retries: int = 1) -> dict:
+def get_explanation(word: str, get_model: Callable[[], str], max_retries: int = 1) -> dict:
     for attempt in range(max_retries + 1):
-        model = next(models)
+        model = get_model()
         prompt = f"Generate the explanation for word: {word}."
         result = subprocess.run(
             ["opencode", "run", "--pure", "-m", model, "--agent", "word-explanation-generator", prompt],

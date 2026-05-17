@@ -2,6 +2,7 @@ import argparse
 import concurrent.futures
 import itertools
 import json
+import json_repair
 import subprocess
 import threading
 from collections.abc import Callable
@@ -106,7 +107,7 @@ def write_expalantions(explanations: dict[str, dict], explanations_path: Path) -
     logger.info(f"Successfully write explanations ({len(explanations)} words) to {explanations_path}.")
 
 
-def get_explanation(word: str, get_model: Callable[[], str], max_retries: int = 2) -> dict:
+def get_explanation(word: str, get_model: Callable[[], str], max_retries: int = 3) -> dict:
     for attempt in range(max_retries + 1):
         model = get_model()
         prompt = f"Generate the explanation for word: {word}."
@@ -119,9 +120,9 @@ def get_explanation(word: str, get_model: Callable[[], str], max_retries: int = 
             logger.error("opencode failed (attempt {}): {}", attempt + 1, result.stderr.strip())
             continue
         try:
-            result_dict = json.loads(result.stdout)
+            result_dict = json_repair.loads(result.stdout, strict=True)
             return result_dict
-        except json.decoder.JSONDecodeError:
+        except (ValueError, json.decoder.JSONDecodeError):
             logger.warning("Failed to decode JSON for word '{}' (attempt {})", word, attempt + 1)
             continue
 

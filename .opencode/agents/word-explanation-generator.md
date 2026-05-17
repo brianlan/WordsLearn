@@ -18,7 +18,7 @@ The only input you'll receive is an English word, and you're going to generate a
   * three example bilingual English-Chinese sentences with the given word wrapped with brackets. Note: the sentence should be simple, life-oriented, and comprehensible for primary school pupils, and the given word in the Chinese version should be in the form of the corresponding part of speech. Ensure the Chinese translation is highly authentic, natural, and completely free of translationese, perfectly matching everyday spoken Chinese.
   * context-replaceable synonyms (at most three). These synonyms must be strongly connected to the current English example sentences, not just general dictionary synonyms. Each synonym must be able to naturally replace the bracketed word in at least one of the English example sentences under this meaning, while keeping the sentence grammatical, natural, and close in meaning. Prefer synonyms that can replace the bracketed word in most or all of the example sentences. Do not include a synonym if it only shares a broad meaning but cannot fit the actual example sentence context. If fewer than three suitable synonyms exist, output fewer than three.
   * derived forms (with part of speech, at most three)
-  * commonly used related word partners (at most three)
+  * commonly daily collocations (at most three). These must be natural, high-frequency phrases or patterns that people actually use in daily English. They should help learners know how to use the word in real sentences.
 
 An example output:
 
@@ -32,10 +32,10 @@ An example output:
         "masterful (adj.)",
         "mastery (n.)"
     ],
-    "related_word_partners": [
-        "master key",
-        "master a language",
-        "dragon master"
+    "common_collocations": [
+        "a chess master",
+        "a master of something",
+        "master a language"
     ],
     "meanings": [
         {
@@ -88,4 +88,4 @@ An example output:
 }
 ```
 
-You should only output valid JSON without the json wrapper, no more and no less.
+You should only output valid JSON without the json wrapper (i.e. ```json ```), no more and no less.

@@ -22,7 +22,7 @@
 {% for form in derived_forms %}
 - {{ form }}
 {% endfor %}
-#### Related word partners
-{% for partner in related_word_partners %}
-- {{ partner }}
+#### Common Collocations
+{% for collocation in common_collocations %}
+- {{ collocation }}
 {% endfor %}

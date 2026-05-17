@@ -11,6 +11,28 @@ from pathlib import Path
 from tqdm import tqdm
 from loguru import logger
 from jinja2 import Template
+from pydantic import BaseModel, ValidationError
+
+
+class Example(BaseModel):
+    english: str
+    chinese: str
+
+
+class Meaning(BaseModel):
+    part_of_speech: str
+    explanation: str
+    examples: list[Example]
+    synonyms: list[str]
+
+
+class Explanation(BaseModel):
+    word: str
+    american_ipa: str
+    british_ipa: str
+    derived_forms: list[str]
+    common_collocations: list[str]
+    meanings: list[Meaning]
 
 
 def parent_ensured_path(path: str | Path):
@@ -123,8 +145,9 @@ def get_explanation(word: str, get_model: Callable[[], str], max_retries: int = 
             return json.loads(result.stdout)
         except json.decoder.JSONDecodeError:
             try:
-                return json_repair.loads(result.stdout, strict=True)
-            except ValueError:
+                repaired = json_repair.loads(result.stdout)
+                return Explanation.model_validate(repaired).model_dump()
+            except (ValueError, ValidationError):
                 logger.warning("Failed to decode JSON for word '{}' (attempt {})", word, attempt + 1)
                 continue
 

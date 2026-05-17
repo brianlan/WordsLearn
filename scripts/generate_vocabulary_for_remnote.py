@@ -14,6 +14,10 @@ def parent_ensured_path(path: str | Path):
     return Path(path)
 
 
+class GetExplanationError(Exception):
+    pass
+
+
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="desc")
     parser.add_argument("-i", "--vocabularies", nargs="+", type=Path, required=True)
@@ -52,7 +56,10 @@ def generate_expalantions(
 
     for word in tqdm(sorted(vocabulary)):
         if word not in explanations:
-            explanations[word] = get_explanation(word, models=models)
+            try:
+                explanations[word] = get_explanation(word, models=models)
+            except GetExplanationError:
+                logger.error("Max retries exceeded for word '{}', skipping.", word)
 
     return explanations
 
@@ -72,19 +79,26 @@ def write_expalantions(explanations: dict[str, dict], explanations_path: Path) -
     logger.info(f"Successfully write explanations ({len(explanations)} words) to {explanations_path}.")
 
 
-def get_explanation(word: str, models: itertools.cycle) -> dict:
-    model = next(models)
-    prompt = f"Generate the explanation for word: {word}."
-    result = subprocess.run(
-        ["opencode", "run", "--pure", "-m", model, "--agent", "word-explanation-generator", prompt],
-        capture_output=True,
-        text=True,
-    )
-    if result.returncode != 0:
-        logger.error("opencode failed: {}", result.stderr.strip())
-        return {}
-    result_dict = json.loads(result.stdout)
-    return result_dict
+def get_explanation(word: str, models: itertools.cycle, max_retries: int = 1) -> dict:
+    for attempt in range(max_retries + 1):
+        model = next(models)
+        prompt = f"Generate the explanation for word: {word}."
+        result = subprocess.run(
+            ["opencode", "run", "--pure", "-m", model, "--agent", "word-explanation-generator", prompt],
+            capture_output=True,
+            text=True,
+        )
+        if result.returncode != 0:
+            logger.error("opencode failed (attempt {}): {}", attempt + 1, result.stderr.strip())
+            continue
+        try:
+            result_dict = json.loads(result.stdout)
+            return result_dict
+        except json.decoder.JSONDecodeError:
+            logger.warning("Failed to decode JSON for word '{}' (attempt {})", word, attempt + 1)
+            continue
+
+    raise GetExplanationError(f"Max retries exceeded for word {word} when calling get_explanation.")
 
 
 def generate_remnote_flash_cards(explanations: dict[str, dict]) -> list[str]:

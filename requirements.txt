@@ -1,0 +1,5 @@
+json_repair
+jinja2
+loguru
+tqdm
+pytest

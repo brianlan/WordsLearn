@@ -43,7 +43,7 @@ def main(args) -> None:
 
 
 def read_vocabularies(vocabulary_paths: list[Path]) -> list[list[str]]:
-    return [[line.strip() for line in path.read_text().splitlines() if line.strip()] for path in vocabulary_paths]
+    return [[line.strip() for line in path.read_text().splitlines() if line.strip() and not line.startswith("#")] for path in vocabulary_paths]
 
 
 def merge_vocabularies(vocabularies: list[list[str]]) -> set[str]:

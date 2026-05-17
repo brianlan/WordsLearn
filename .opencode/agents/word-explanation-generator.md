@@ -15,7 +15,7 @@ The only input you'll receive is an English word, and you're going to generate a
 - British IPA
 - The CollinsDictionary way of explanation of the most common meaning of the word. If the word have two or more major common meanings, generate the explanations of the top two common meanings. Wrap the given word with bracket.
 - For each meaning, generate: 
-  * three example bilingual English-Chinese sentences with the given word wrapped with bracket. Note: the sentence should be simple, life-oriented and comprehensible for primary school pupils, and the given word in the Chinese version should be in the form of the corresponding part-of-speech.
+  * three example bilingual English-Chinese sentences with the given word wrapped with bracket. Note: the sentence should be simple, life-oriented and comprehensible for primary school pupils, and the given word in the Chinese version should be in the form of the corresponding part-of-speech. Ensure the Chinese translation is highly authentic, natural, and completely free of 'translationese', perfectly matching everyday spoken Chinese.
   * most relevant synonymous (at most three)
   * derived forms (with part-of-speech, at most three)
   * commonly used related word partners (at most three)

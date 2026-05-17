@@ -36,14 +36,19 @@ def parse_args() -> argparse.Namespace:
 
 def main(args) -> None:
     vocabulary = merge_vocabularies(read_vocabularies(args.vocabularies))
-    explanations = generate_expalantions(vocabulary, args.explanations_path, args.models, startover=args.startover, num_workers=args.num_workers)
+    explanations = generate_expalantions(
+        vocabulary, args.explanations_path, args.models, startover=args.startover, num_workers=args.num_workers
+    )
     write_expalantions(explanations, args.explanations_path)
     flash_cards = generate_remnote_flash_cards(explanations)
     write_flash_cards(flash_cards, args.output_path)
 
 
 def read_vocabularies(vocabulary_paths: list[Path]) -> list[list[str]]:
-    return [[line.strip() for line in path.read_text().splitlines() if line.strip() and not line.startswith("#")] for path in vocabulary_paths]
+    return [
+        [line.strip() for line in path.read_text().splitlines() if line.strip() and not line.startswith("#")]
+        for path in vocabulary_paths
+    ]
 
 
 def merge_vocabularies(vocabularies: list[list[str]]) -> set[str]:
@@ -51,7 +56,11 @@ def merge_vocabularies(vocabularies: list[list[str]]) -> set[str]:
 
 
 def generate_expalantions(
-    vocabulary: set[str], explanations_path: Path, models: itertools.cycle, startover: bool = False, num_workers: int = 1
+    vocabulary: set[str],
+    explanations_path: Path,
+    models: itertools.cycle,
+    startover: bool = False,
+    num_workers: int = 1,
 ) -> dict[str, dict]:
     logger.info(f"Generating explanations for {len(vocabulary)} words.")
     explanations: dict[str, dict] = {}
@@ -120,24 +129,29 @@ def get_explanation(word: str, get_model: Callable[[], str], max_retries: int = 
 
 
 def generate_remnote_flash_cards(explanations: dict[str, dict]) -> list[str]:
-    def bu(s):
-        return emphasize(s, (" _**", "**_ "))
-
-    def b(s):
-        return emphasize(s, (" __**", "**__ "))
-
     flash_cards: list[str] = []
     for word, explanation in explanations.items():
         for meaning in explanation["meanings"]:
             for example in meaning["examples"]:
-                en_card = f"{bu(example['english'])} == {b(meaning['explanation'])}"
-                zh_card = f"{bu(example['chinese'])} == {b(meaning['explanation'])}"
+                ipa, exp, syn = explanation["american_ipa"], meaning["explanation"], meaning["synonyms"]
+                en_card = create_card(example["english"], ipa, exp, syn)
+                zh_card = create_card(example["chinese"], ipa, exp, syn)
                 flash_cards.extend([en_card, zh_card])
     return flash_cards
 
 
 def emphasize(sentence: str, style: tuple[str, str]) -> str:
     return sentence.replace("[", style[0]).replace("]", style[1])
+
+
+def create_card(example: str, ipa: str, explanation: str, synonyms: list[str]) -> str:
+    def bu(s):
+        return emphasize(s, (" _**", "**_ "))
+
+    def b(s):
+        return emphasize(s, (" __**", "**__ "))
+
+    return f"{bu(example)} == {ipa} : {b(explanation)} [{', '.join(synonyms)}]"
 
 
 def generate_full_explanation_markdown_format(explanation: dict) -> str:

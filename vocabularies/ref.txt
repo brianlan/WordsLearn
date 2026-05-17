@@ -16,7 +16,7 @@ Harvard
 # REF-1B
 greedy
 strike
-remains
+remain
 man-made
 evidence
 describe

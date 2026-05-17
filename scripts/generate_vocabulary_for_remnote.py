@@ -106,14 +106,14 @@ def generate_remnote_flash_cards(explanations: dict[str, dict]) -> list[str]:
         return emphasize(s, (" _**", "**_ "))
 
     def b(s):
-        return emphasize(s, ("__**", "**__"))
+        return emphasize(s, (" __**", "**__ "))
 
     flash_cards: list[str] = []
     for word, explanation in explanations.items():
         for meaning in explanation["meanings"]:
             for example in meaning["examples"]:
-                en_card = f"{bu(example['english'])}=={b(meaning['explanation'])}"
-                zh_card = f"{bu(example['chinese'])}==__**{word}**__ ⇒ {b(meaning['explanation'])}"
+                en_card = f"{bu(example['english'])} == {b(meaning['explanation'])}"
+                zh_card = f"{bu(example['chinese'])} == {b(meaning['explanation'])}"
                 flash_cards.extend([en_card, zh_card])
     return flash_cards
 

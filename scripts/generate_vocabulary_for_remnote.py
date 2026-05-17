@@ -88,15 +88,24 @@ def get_explanation(word: str, models: itertools.cycle) -> dict:
 
 
 def generate_remnote_flash_cards(explanations: dict[str, dict]) -> list[str]:
+    def bu(s):
+        return emphasize(s, (" _**", "**_ "))
+
+    def b(s):
+        return emphasize(s, ("__**", "**__"))
+
     flash_cards: list[str] = []
     for word, explanation in explanations.items():
-        en_card = generate_full_explanation_markdown_format(explanation)
-        flash_cards.extend(["\n", en_card])
         for meaning in explanation["meanings"]:
-            for example_sentence in meaning["examples"]:
-                zh_card = f"{example_sentence['chinese']}=={word}"
-                flash_cards.extend(["\n", zh_card])
+            for example in meaning["examples"]:
+                en_card = f"{bu(example['english'])}=={b(meaning['explanation'])}"
+                zh_card = f"{bu(example['chinese'])}==__**{word}**__ ⇒ {b(meaning['explanation'])}"
+                flash_cards.extend([en_card, zh_card])
     return flash_cards
+
+
+def emphasize(sentence: str, style: tuple[str, str]) -> str:
+    return sentence.replace("[", style[0]).replace("]", style[1])
 
 
 def generate_full_explanation_markdown_format(explanation: dict) -> str:

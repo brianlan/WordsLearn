@@ -120,11 +120,13 @@ def get_explanation(word: str, get_model: Callable[[], str], max_retries: int = 
             logger.error("opencode failed (attempt {}): {}", attempt + 1, result.stderr.strip())
             continue
         try:
-            result_dict = json_repair.loads(result.stdout, strict=True)
-            return result_dict
-        except (ValueError, json.decoder.JSONDecodeError):
-            logger.warning("Failed to decode JSON for word '{}' (attempt {})", word, attempt + 1)
-            continue
+            return json.loads(result.stdout)
+        except json.decoder.JSONDecodeError:
+            try:
+                return json_repair.loads(result.stdout, strict=True)
+            except ValueError:
+                logger.warning("Failed to decode JSON for word '{}' (attempt {})", word, attempt + 1)
+                continue
 
     raise GetExplanationError(f"Max retries exceeded for word {word} when calling get_explanation.")
 

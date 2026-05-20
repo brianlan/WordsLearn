@@ -34,13 +34,13 @@ def main(args) -> None:
 
     logger.info(f"Word with flaws: {sorted(flaw_word_list)}")
 
-    if not args.dry_run:
+    if not args.dry_run and len(flaw_word_list) > 0:
         for word in flaw_word_list:
             logger.info(f"Removed {explanations[word].get('generated_by', 'unknown')} generated word: {word} from {args.explanations_path}")
             del explanations[word]
 
-        with open(args.explanations_path, "w") as f:
-            json.dump(explanations, f)
+        with open(args.explanations_path, "w", encoding="utf-8") as f:
+            json.dump(explanations, f, ensure_ascii=False)
 
 
 if __name__ == "__main__":

@@ -46,7 +46,6 @@ origin
 effort
 skill
 audience
-prize
 train
 culture
 

@@ -4,7 +4,6 @@ president
 system
 instead
 product
-swift
 research
 signal
 online
@@ -36,7 +35,6 @@ palace
 honour
 honor
 encourage
-digest
 muscle
 peace
 relative

@@ -26,7 +26,9 @@ WordsLearn reads plain-text vocabulary lists, calls an LLM to generate rich, str
 ```
 WordsLearn/
 ├── scripts/
-│   └── generate_vocabulary_for_remnote.py   # Main entry point
+│   ├── generate_explanations.py             # Step 1: generate explanations JSON
+│   ├── generate_flashcards.py               # Step 2: generate RemNote flashcard TXT
+│   └── vocab_utils.py                       # Shared helpers
 ├── vocabularies/                            # Input word lists
 │   ├── toefl.txt                            # 1201 TOEFL words
 │   ├── shiwen.txt                           # Sample vocabulary
@@ -38,7 +40,7 @@ WordsLearn/
 ├── templates/
 │   └── word-explanation.md                  # Jinja2 template for full markdown output
 ├── tests/
-│   └── test_generate_vocabulary_for_remnote.py
+│   └── test_scripts.py
 ├── .opencode/agents/
 │   └── word-explanation-generator.md        # OpenCode agent prompt
 └── requirements.txt
@@ -62,25 +64,42 @@ You also need the [OpenCode](https://opencode.ai) CLI installed and configured w
 
 ## Usage
 
+The workflow is two steps: first generate explanations, then generate flashcards.
+
+### Step 1: Generate explanations
+
 ```bash
-python scripts/generate_vocabulary_for_remnote.py \
+python -m scripts.generate_explanations \
   -i vocabularies/toefl.txt \
-  -o output/flash_cards_toefl.txt \
   --explanations-path explanations/toefl.json \
   --models model1 model2 \
   --num-workers 4
 ```
 
-### CLI Arguments
+### Step 2: Generate flashcards
+
+```bash
+python -m scripts.generate_flashcards \
+  -e explanations/toefl.json \
+  -o output/flash_cards_toefl.txt
+```
+
+### CLI Arguments — `generate_explanations.py`
 
 | Argument | Description |
 |----------|-------------|
 | `-i, --vocabularies` | One or more vocabulary list files (required) |
-| `-o, --output-path` | Output file for RemNote flashcards (required) |
+| `--explanations-path` | JSON output file for word explanations (required) |
 | `--models` | One or more LLM models to use in round-robin (required) |
-| `--explanations-path` | JSON cache file for word explanations (required) |
 | `--startover` | Ignore existing cache and re-generate all words |
 | `--num-workers` | Number of parallel worker threads (default: 1) |
+
+### CLI Arguments — `generate_flashcards.py`
+
+| Argument | Description |
+|----------|-------------|
+| `-e, --explanations-path` | JSON file with word explanations (required) |
+| `-o, --output-path` | Output file for RemNote flashcards (required) |
 
 ### Vocabulary File Format
 
@@ -114,14 +133,14 @@ pytest tests/
 1. **Read & merge** — Combines all vocabulary files into a deduplicated set of words.
 2. **Generate explanations** — For each new word, calls the OpenCode agent with a structured prompt. The agent returns JSON with IPA, meanings, examples, synonyms, derived forms, and collocations.
 3. **Cache** — Saves valid explanations to a JSON file for incremental builds.
-4. **Generate flashcards** — Transforms each example sentence into a pair of RemNote flashcards (English + Chinese).
+4. **Generate flashcards** — Reads the cached explanations and transforms each example sentence into a pair of RemNote flashcards (English + Chinese).
 5. **Write output** — Saves flashcards to a text file ready for import into RemNote.
 
 ## Customization
 
 - **Agent prompt**: Edit `.opencode/agents/word-explanation-generator.md` to change LLM behavior.
 - **Markdown template**: Modify `templates/word-explanation.md` to adjust the full explanation format (useful for non-flashcard output).
-- **Styling**: The `create_card` and `emphasize` functions in the script control RemNote bold/italic formatting.
+- **Styling**: The `create_card` and `emphasize` functions in `scripts/generate_flashcards.py` control RemNote bold/italic formatting.
 
 ## License
 

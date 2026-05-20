@@ -10,8 +10,9 @@ from pathlib import Path
 
 from tqdm import tqdm
 from loguru import logger
-from jinja2 import Template
 from pydantic import BaseModel, ValidationError
+
+from .vocab_utils import parent_ensured_path, read_explanations
 
 
 class Example(BaseModel):
@@ -35,21 +36,15 @@ class Explanation(BaseModel):
     meanings: list[Meaning]
 
 
-def parent_ensured_path(path: str | Path):
-    Path(path).parent.mkdir(parents=True, exist_ok=True)
-    return Path(path)
-
-
 class GetExplanationError(Exception):
     pass
 
 
 def parse_args() -> argparse.Namespace:
-    parser = argparse.ArgumentParser(description="desc")
+    parser = argparse.ArgumentParser(description="Generate word explanations JSON from vocabulary files.")
     parser.add_argument("-i", "--vocabularies", nargs="+", type=Path, required=True)
-    parser.add_argument("-o", "--output-path", type=parent_ensured_path, required=True)
-    parser.add_argument("--models", nargs="+", type=str, required=True)
     parser.add_argument("--explanations-path", type=parent_ensured_path, required=True)
+    parser.add_argument("--models", nargs="+", type=str, required=True)
     parser.add_argument("--startover", default=False, action="store_true")
     parser.add_argument("--num-workers", type=int, default=1)
     args = parser.parse_args()
@@ -59,12 +54,10 @@ def parse_args() -> argparse.Namespace:
 
 def main(args) -> None:
     vocabulary = merge_vocabularies(read_vocabularies(args.vocabularies))
-    explanations = generate_expalantions(
+    explanations = generate_explanations(
         vocabulary, args.explanations_path, args.models, startover=args.startover, num_workers=args.num_workers
     )
-    write_expalantions(explanations, args.explanations_path)
-    flash_cards = generate_remnote_flash_cards(explanations)
-    write_flash_cards(flash_cards, args.output_path)
+    write_explanations(explanations, args.explanations_path)
 
 
 def read_vocabularies(vocabulary_paths: list[Path]) -> list[list[str]]:
@@ -78,7 +71,7 @@ def merge_vocabularies(vocabularies: list[list[str]]) -> set[str]:
     return set(itertools.chain.from_iterable(vocabularies))
 
 
-def generate_expalantions(
+def generate_explanations(
     vocabulary: set[str],
     explanations_path: Path,
     models: itertools.cycle,
@@ -88,7 +81,10 @@ def generate_expalantions(
     logger.info(f"Generating explanations for {len(vocabulary)} words.")
     explanations: dict[str, dict] = {}
     if not startover:
-        explanations = read_explanations(explanations_path)
+        try:
+            explanations = read_explanations(explanations_path)
+        except FileNotFoundError:
+            pass
 
     words_to_process = [word for word in sorted(vocabulary) if word not in explanations]
     model_lock = threading.Lock()
@@ -114,16 +110,7 @@ def generate_expalantions(
     return explanations
 
 
-def read_explanations(explanations_path: Path) -> dict[str, dict]:
-    logger.info(f"Reading explanations from {explanations_path}.")
-    try:
-        with open(explanations_path) as f:
-            return json.load(f)
-    except FileNotFoundError:
-        return {}
-
-
-def write_expalantions(explanations: dict[str, dict], explanations_path: Path) -> None:
+def write_explanations(explanations: dict[str, dict], explanations_path: Path) -> None:
     with open(explanations_path, "w", encoding="utf-8") as f:
         json.dump(explanations, f, ensure_ascii=False)
     logger.info(f"Successfully write explanations ({len(explanations)} words) to {explanations_path}.")
@@ -142,56 +129,24 @@ def get_explanation(word: str, get_model: Callable[[], str], max_retries: int = 
             logger.error("opencode failed (attempt {}): {}", attempt + 1, result.stderr.strip())
             continue
         try:
-            explanation = json.loads(result.stdout)
+            raw = json.loads(result.stdout)
         except json.decoder.JSONDecodeError:
             try:
-                repaired = json_repair.loads(result.stdout)
-                explanation = Explanation.model_validate(repaired).model_dump()
-            except (ValueError, ValidationError):
+                raw = json_repair.loads(result.stdout)
+            except ValueError:
                 logger.warning("Failed to decode JSON for word '{}' (attempt {})", word, attempt + 1)
                 continue
-        
+
+        try:
+            explanation = Explanation.model_validate(raw).model_dump()
+        except ValidationError:
+            logger.warning("Schema validation failed for word '{}' (attempt {})", word, attempt + 1)
+            continue
+
         explanation["generated_by"] = model
         return explanation
 
     raise GetExplanationError(f"Max retries exceeded for word {word} when calling get_explanation.")
-
-
-def generate_remnote_flash_cards(explanations: dict[str, dict]) -> list[str]:
-    flash_cards: list[str] = []
-    for word, explanation in explanations.items():
-        for meaning in explanation["meanings"]:
-            for example in meaning["examples"]:
-                ipa, exp, syn = explanation["american_ipa"], meaning["explanation"], meaning["synonyms"]
-                en_card = create_card(example["english"], ipa, exp, syn)
-                zh_card = create_card(example["chinese"], ipa, exp, syn)
-                flash_cards.extend([en_card, zh_card])
-    return flash_cards
-
-
-def emphasize(sentence: str, style: tuple[str, str]) -> str:
-    return sentence.replace("[", style[0]).replace("]", style[1])
-
-
-def create_card(example: str, ipa: str, explanation: str, synonyms: list[str]) -> str:
-    def bu(s):
-        return emphasize(s, (" _**", "**_ "))
-
-    def b(s):
-        return emphasize(s, (" __**", "**__ "))
-
-    return f"{bu(example)} == {ipa} : {b(explanation)} [{', '.join(synonyms)}]"
-
-
-def generate_full_explanation_markdown_format(explanation: dict) -> str:
-    template = Template(Path("templates/word-explanation.md").read_text())
-    return template.render(**explanation).strip()
-
-
-def write_flash_cards(flash_cards: list[str], output_path: Path) -> None:
-    output_path.parent.mkdir(parents=True, exist_ok=True)
-    output_path.write_text("\n".join(flash_cards), encoding="utf-8")
-    logger.info(f"Successfully wrote {len(flash_cards)} flash cards to {output_path}.")
 
 
 if __name__ == "__main__":

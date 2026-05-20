@@ -1,6 +1,8 @@
+import subprocess
+import sys
 from pathlib import Path
 
-from scripts.generate_vocabulary_for_remnote import merge_vocabularies, read_vocabularies
+from scripts.generate_explanations import merge_vocabularies, read_vocabularies
 
 
 def test_merge_vocabularies_combines_and_dedupes():
@@ -34,3 +36,23 @@ def test_read_vocabularies_multiple_files(tmp_path: Path):
     file1.write_text("apple\n# comment\nbanana\n")
     file2.write_text("cherry\n\n")
     assert read_vocabularies([file1, file2]) == [["apple", "banana"], ["cherry"]]
+
+
+def test_generate_explanations_help():
+    result = subprocess.run(
+        [sys.executable, "-m", "scripts.generate_explanations", "--help"],
+        capture_output=True,
+        text=True,
+    )
+    assert result.returncode == 0
+    assert "Generate word explanations JSON" in result.stdout
+
+
+def test_generate_flashcards_help():
+    result = subprocess.run(
+        [sys.executable, "-m", "scripts.generate_flashcards", "--help"],
+        capture_output=True,
+        text=True,
+    )
+    assert result.returncode == 0
+    assert "Generate Remnote flash cards" in result.stdout

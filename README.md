@@ -26,23 +26,23 @@ WordsLearn reads plain-text vocabulary lists, calls an LLM to generate rich, str
 ```
 WordsLearn/
 ├── scripts/
-│   ├── generate_explanations.py             # Step 1: generate explanations JSON
-│   ├── generate_flashcards.py               # Step 2: generate RemNote flashcard TXT
-│   └── vocab_utils.py                       # Shared helpers
-├── vocabularies/                            # Input word lists
-│   ├── toefl.txt                            # 1201 TOEFL words
-│   ├── shiwen.txt                           # Sample vocabulary
-│   └── ref.txt                              # Reference vocabulary
+│   ├── generate_explanations.py                  # Step 1: generate explanations JSON
+│   ├── generate_flashcards_from_explanations.py  # Step 2: generate RemNote flashcard TXT
+│   └── vocab_utils.py                            # Shared helpers
+├── vocabularies/                                 # Input word lists
+│   ├── toefl.txt                                 # 1201 TOEFL words
+│   ├── shiwen.txt                                # Sample vocabulary
+│   └── ref.txt                                   # Reference vocabulary
 ├── explanations/
-│   └── word_meaning.json                    # Cached LLM explanations
-├── output/                                  # Generated flashcards
+│   └── word_meaning.json                         # Cached LLM explanations
+├── output/                                       # Generated flashcards
 │   └── flash_cards_*.txt
 ├── templates/
-│   └── word-explanation.md                  # Jinja2 template for full markdown output
+│   └── word-explanation.md                       # Jinja2 template for full markdown output
 ├── tests/
 │   └── test_scripts.py
 ├── .opencode/agents/
-│   └── word-explanation-generator.md        # OpenCode agent prompt
+│   └── word-explanation-generator.md             # OpenCode agent prompt
 └── requirements.txt
 ```
 
@@ -79,7 +79,7 @@ python -m scripts.generate_explanations \
 ### Step 2: Generate flashcards
 
 ```bash
-python -m scripts.generate_flashcards \
+python -m scripts.generate_flashcards_from_explanations \
   -e explanations/toefl.json \
   -o output/flash_cards_toefl.txt
 ```
@@ -94,7 +94,7 @@ python -m scripts.generate_flashcards \
 | `--startover` | Ignore existing cache and re-generate all words |
 | `--num-workers` | Number of parallel worker threads (default: 1) |
 
-### CLI Arguments — `generate_flashcards.py`
+### CLI Arguments — `generate_flashcards_from_explanations.py`
 
 | Argument | Description |
 |----------|-------------|
@@ -140,7 +140,7 @@ pytest tests/
 
 - **Agent prompt**: Edit `.opencode/agents/word-explanation-generator.md` to change LLM behavior.
 - **Markdown template**: Modify `templates/word-explanation.md` to adjust the full explanation format (useful for non-flashcard output).
-- **Styling**: The `create_card` and `emphasize` functions in `scripts/generate_flashcards.py` control RemNote bold/italic formatting.
+- **Styling**: The `create_card` and `emphasize` functions in `scripts/generate_flashcards_from_explanations.py` control RemNote bold/italic formatting.
 
 ## License
 

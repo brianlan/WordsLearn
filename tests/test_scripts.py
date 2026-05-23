@@ -48,9 +48,9 @@ def test_generate_explanations_help():
     assert "Generate word explanations JSON" in result.stdout
 
 
-def test_generate_flashcards_help():
+def test_generate_flashcards_from_explanations_help():
     result = subprocess.run(
-        [sys.executable, "-m", "scripts.generate_flashcards", "--help"],
+        [sys.executable, "-m", "scripts.generate_flashcards_from_explanations", "--help"],
         capture_output=True,
         text=True,
     )

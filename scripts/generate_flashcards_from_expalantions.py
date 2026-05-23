@@ -10,18 +10,21 @@ def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Generate Remnote flash cards from explanations JSON.")
     parser.add_argument("-e", "--explanations-path", type=Path, required=True)
     parser.add_argument("-o", "--output-path", type=parent_ensured_path, required=True)
+    parser.add_argument("-w", "--words", nargs="+", help="List of words to generate flashcards for (default: all words)")
     return parser.parse_args()
 
 
 def main(args) -> None:
     explanations = read_explanations(args.explanations_path)
-    flash_cards = generate_remnote_flash_cards(explanations)
+    flash_cards = generate_remnote_flash_cards(explanations, args.words)
     write_flash_cards(flash_cards, args.output_path)
 
 
-def generate_remnote_flash_cards(explanations: dict[str, dict]) -> list[str]:
+def generate_remnote_flash_cards(explanations: dict[str, dict], words: list[str] | None = None) -> list[str]:
     flash_cards: list[str] = []
-    for word, explanation in explanations.items():
+    target_words = set(words) if words else set(explanations.keys())
+    for word in target_words & set(explanations.keys()):
+        explanation = explanations[word]
         for meaning in explanation["meanings"]:
             for example in meaning["examples"]:
                 ipa, exp, syn = explanation["american_ipa"], meaning["explanation"], meaning["synonyms"]

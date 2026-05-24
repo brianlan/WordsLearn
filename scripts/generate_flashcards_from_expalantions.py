@@ -3,7 +3,7 @@ from pathlib import Path
 
 from loguru import logger
 
-from .vocab_utils import parent_ensured_path, read_explanations
+from .vocab_utils import parent_ensured_path, read_json
 
 
 def parse_args() -> argparse.Namespace:
@@ -15,7 +15,8 @@ def parse_args() -> argparse.Namespace:
 
 
 def main(args) -> None:
-    explanations = read_explanations(args.explanations_path)
+    logger.info(f"Reading explanations from {args.explanations_path}.")
+    explanations = read_json(args.explanations_path)
     flash_cards = generate_remnote_flash_cards(explanations, args.words)
     write_flash_cards(flash_cards, args.output_path)
 

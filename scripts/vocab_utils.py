@@ -9,7 +9,6 @@ def parent_ensured_path(path: str | Path):
     return Path(path)
 
 
-def read_explanations(explanations_path: Path) -> dict[str, dict]:
-    logger.info(f"Reading explanations from {explanations_path}.")
-    with open(explanations_path) as f:
+def read_json(json_path: Path) -> dict:
+    with open(json_path) as f:
         return json.load(f)

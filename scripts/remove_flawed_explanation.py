@@ -6,11 +6,6 @@ from pathlib import Path
 from loguru import logger
 
 
-def parent_ensured_path(path: str | Path):
-    Path(path).parent.mkdir(parents=True, exist_ok=True)
-    return Path(path)
-
-
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="desc")
 

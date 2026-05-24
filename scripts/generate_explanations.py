@@ -12,7 +12,7 @@ from tqdm import tqdm
 from loguru import logger
 from pydantic import BaseModel, ValidationError
 
-from .vocab_utils import parent_ensured_path, read_explanations
+from .vocab_utils import parent_ensured_path, read_json
 
 
 class Example(BaseModel):
@@ -82,7 +82,8 @@ def generate_explanations(
     explanations: dict[str, dict] = {}
     if not startover:
         try:
-            explanations = read_explanations(explanations_path)
+            logger.info(f"Reading explanations from {explanations_path}.")
+            explanations = read_json(explanations_path)
         except FileNotFoundError:
             pass
 

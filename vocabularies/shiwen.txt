@@ -60,6 +60,7 @@ force
 elementary
 surround
 agency
+prize
 pierce
 mature
 overcome
@@ -76,6 +77,7 @@ overall
 shelter
 stretch
 shift
+swift
 reality
 therapy
 patient
@@ -83,3 +85,4 @@ climate
 migration
 unforgettable
 item
+digest

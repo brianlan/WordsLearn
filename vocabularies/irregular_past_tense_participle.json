@@ -1,0 +1,430 @@
+{
+    "be": {
+        "past_tenses": ["was", "were"],
+        "past_participles": ["been"]
+    },
+    "bear": {
+        "past_tenses": ["bore"],
+        "past_participles": ["borne", "born"]
+    },
+    "beat": {
+        "past_tenses": ["beat"],
+        "past_participles": ["beaten"]
+    },
+    "become": {
+        "past_tenses": ["became"],
+        "past_participles": ["become"]
+    },
+    "begin": {
+        "past_tenses": ["began"],
+        "past_participles": ["begun"]
+    },
+    "blow": {
+        "past_tenses": ["blew"],
+        "past_participles": ["blown"]
+    },
+    "break": {
+        "past_tenses": ["broke"],
+        "past_participles": ["broken"]
+    },
+    "bring": {
+        "past_tenses": ["brought"],
+        "past_participles": ["brought"]
+    },
+    "build": {
+        "past_tenses": ["built"],
+        "past_participles": ["built"]
+    },
+    "burn": {
+        "past_tenses": ["burned", "burnt"],
+        "past_participles": ["burned", "burnt"]
+    },
+    "buy": {
+        "past_tenses": ["bought"],
+        "past_participles": ["bought"]
+    },
+    "catch": {
+        "past_tenses": ["caught"],
+        "past_participles": ["caught"]
+    },
+    "choose": {
+        "past_tenses": ["chose"],
+        "past_participles": ["chosen"]
+    },
+    "come": {
+        "past_tenses": ["came"],
+        "past_participles": ["come"]
+    },
+    "cost": {
+        "past_tenses": ["cost"],
+        "past_participles": ["cost"]
+    },
+    "cut": {
+        "past_tenses": ["cut"],
+        "past_participles": ["cut"]
+    },
+    "deal": {
+        "past_tenses": ["dealt"],
+        "past_participles": ["dealt"]
+    },
+    "dig": {
+        "past_tenses": ["dug"],
+        "past_participles": ["dug"]
+    },
+    "do": {
+        "past_tenses": ["did"],
+        "past_participles": ["done"]
+    },
+    "draw": {
+        "past_tenses": ["drew"],
+        "past_participles": ["drawn"]
+    },
+    "dream": {
+        "past_tenses": ["dreamed", "dreamt"],
+        "past_participles": ["dreamed", "dreamt"]
+    },
+    "drink": {
+        "past_tenses": ["drank"],
+        "past_participles": ["drunk"]
+    },
+    "drive": {
+        "past_tenses": ["drove"],
+        "past_participles": ["driven"]
+    },
+    "eat": {
+        "past_tenses": ["ate"],
+        "past_participles": ["eaten"]
+    },
+    "fall": {
+        "past_tenses": ["fell"],
+        "past_participles": ["fallen"]
+    },
+    "feed": {
+        "past_tenses": ["fed"],
+        "past_participles": ["fed"]
+    },
+    "feel": {
+        "past_tenses": ["felt"],
+        "past_participles": ["felt"]
+    },
+    "fight": {
+        "past_tenses": ["fought"],
+        "past_participles": ["fought"]
+    },
+    "find": {
+        "past_tenses": ["found"],
+        "past_participles": ["found"]
+    },
+    "fit": {
+        "past_tenses": ["fit", "fitted"],
+        "past_participles": ["fit", "fitted"]
+    },
+    "fly": {
+        "past_tenses": ["flew"],
+        "past_participles": ["flown"]
+    },
+    "forget": {
+        "past_tenses": ["forgot"],
+        "past_participles": ["forgotten"]
+    },
+    "forgive": {
+        "past_tenses": ["forgave"],
+        "past_participles": ["forgiven"]
+    },
+    "freeze": {
+        "past_tenses": ["froze"],
+        "past_participles": ["frozen"]
+    },
+    "get": {
+        "past_tenses": ["got"],
+        "past_participles": ["got", "gotten"]
+    },
+    "give": {
+        "past_tenses": ["gave"],
+        "past_participles": ["given"]
+    },
+    "go": {
+        "past_tenses": ["went"],
+        "past_participles": ["gone"]
+    },
+    "grow": {
+        "past_tenses": ["grew"],
+        "past_participles": ["grown"]
+    },
+    "hang": {
+        "past_tenses": ["hung", "hanged"],
+        "past_participles": ["hung", "hanged"]
+    },
+    "have": {
+        "past_tenses": ["had"],
+        "past_participles": ["had"]
+    },
+    "hear": {
+        "past_tenses": ["heard"],
+        "past_participles": ["heard"]
+    },
+    "hide": {
+        "past_tenses": ["hid"],
+        "past_participles": ["hidden"]
+    },
+    "hit": {
+        "past_tenses": ["hit"],
+        "past_participles": ["hit"]
+    },
+    "hold": {
+        "past_tenses": ["held"],
+        "past_participles": ["held"]
+    },
+    "hurt": {
+        "past_tenses": ["hurt"],
+        "past_participles": ["hurt"]
+    },
+    "keep": {
+        "past_tenses": ["kept"],
+        "past_participles": ["kept"]
+    },
+    "know": {
+        "past_tenses": ["knew"],
+        "past_participles": ["known"]
+    },
+    "lay": {
+        "past_tenses": ["laid"],
+        "past_participles": ["laid"]
+    },
+    "lead": {
+        "past_tenses": ["led"],
+        "past_participles": ["led"]
+    },
+    "learn": {
+        "past_tenses": ["learned", "learnt"],
+        "past_participles": ["learned", "learnt"]
+    },
+    "leave": {
+        "past_tenses": ["left"],
+        "past_participles": ["left"]
+    },
+    "lend": {
+        "past_tenses": ["lent"],
+        "past_participles": ["lent"]
+    },
+    "let": {
+        "past_tenses": ["let"],
+        "past_participles": ["let"]
+    },
+    "lie": {
+        "past_tenses": ["lay"],
+        "past_participles": ["lain"]
+    },
+    "light": {
+        "past_tenses": ["lit", "lighted"],
+        "past_participles": ["lit", "lighted"]
+    },
+    "lose": {
+        "past_tenses": ["lost"],
+        "past_participles": ["lost"]
+    },
+    "make": {
+        "past_tenses": ["made"],
+        "past_participles": ["made"]
+    },
+    "mean": {
+        "past_tenses": ["meant"],
+        "past_participles": ["meant"]
+    },
+    "meet": {
+        "past_tenses": ["met"],
+        "past_participles": ["met"]
+    },
+    "mistake": {
+        "past_tenses": ["mistook"],
+        "past_participles": ["mistaken"]
+    },
+    "overeat": {
+        "past_tenses": ["overate"],
+        "past_participles": ["overeaten"]
+    },
+    "pay": {
+        "past_tenses": ["paid"],
+        "past_participles": ["paid"]
+    },
+    "prove": {
+        "past_tenses": ["proved"],
+        "past_participles": ["proved", "proven"]
+    },
+    "put": {
+        "past_tenses": ["put"],
+        "past_participles": ["put"]
+    },
+    "read": {
+        "past_tenses": ["read"],
+        "past_participles": ["read"]
+    },
+    "rebuild": {
+        "past_tenses": ["rebuilt"],
+        "past_participles": ["rebuilt"]
+    },
+    "retell": {
+        "past_tenses": ["retold"],
+        "past_participles": ["retold"]
+    },
+    "ride": {
+        "past_tenses": ["rode"],
+        "past_participles": ["ridden"]
+    },
+    "ring": {
+        "past_tenses": ["rang"],
+        "past_participles": ["rung"]
+    },
+    "rise": {
+        "past_tenses": ["rose"],
+        "past_participles": ["risen"]
+    },
+    "run": {
+        "past_tenses": ["ran"],
+        "past_participles": ["run"]
+    },
+    "say": {
+        "past_tenses": ["said"],
+        "past_participles": ["said"]
+    },
+    "see": {
+        "past_tenses": ["saw"],
+        "past_participles": ["seen"]
+    },
+    "sell": {
+        "past_tenses": ["sold"],
+        "past_participles": ["sold"]
+    },
+    "send": {
+        "past_tenses": ["sent"],
+        "past_participles": ["sent"]
+    },
+    "set": {
+        "past_tenses": ["set"],
+        "past_participles": ["set"]
+    },
+    "shine": {
+        "past_tenses": ["shone", "shined"],
+        "past_participles": ["shone", "shined"]
+    },
+    "shoot": {
+        "past_tenses": ["shot"],
+        "past_participles": ["shot"]
+    },
+    "show": {
+        "past_tenses": ["showed"],
+        "past_participles": ["showed", "shown"]
+    },
+    "shut": {
+        "past_tenses": ["shut"],
+        "past_participles": ["shut"]
+    },
+    "sing": {
+        "past_tenses": ["sang"],
+        "past_participles": ["sung"]
+    },
+    "sink": {
+        "past_tenses": ["sank"],
+        "past_participles": ["sunk"]
+    },
+    "sit": {
+        "past_tenses": ["sat"],
+        "past_participles": ["sat"]
+    },
+    "sleep": {
+        "past_tenses": ["slept"],
+        "past_participles": ["slept"]
+    },
+    "smell": {
+        "past_tenses": ["smelled", "smelt"],
+        "past_participles": ["smelled", "smelt"]
+    },
+    "speak": {
+        "past_tenses": ["spoke"],
+        "past_participles": ["spoken"]
+    },
+    "speed": {
+        "past_tenses": ["sped", "speeded"],
+        "past_participles": ["sped", "speeded"]
+    },
+    "spell": {
+        "past_tenses": ["spelled", "spelt"],
+        "past_participles": ["spelled", "spelt"]
+    },
+    "spend": {
+        "past_tenses": ["spent"],
+        "past_participles": ["spent"]
+    },
+    "spit": {
+        "past_tenses": ["spat", "spit"],
+        "past_participles": ["spat", "spit"]
+    },
+    "spread": {
+        "past_tenses": ["spread"],
+        "past_participles": ["spread"]
+    },
+    "stand": {
+        "past_tenses": ["stood"],
+        "past_participles": ["stood"]
+    },
+    "steal": {
+        "past_tenses": ["stole"],
+        "past_participles": ["stolen"]
+    },
+    "stick": {
+        "past_tenses": ["stuck"],
+        "past_participles": ["stuck"]
+    },
+    "strike": {
+        "past_tenses": ["struck"],
+        "past_participles": ["struck", "stricken"]
+    },
+    "sweep": {
+        "past_tenses": ["swept"],
+        "past_participles": ["swept"]
+    },
+    "swim": {
+        "past_tenses": ["swam"],
+        "past_participles": ["swum"]
+    },
+    "take": {
+        "past_tenses": ["took"],
+        "past_participles": ["taken"]
+    },
+    "teach": {
+        "past_tenses": ["taught"],
+        "past_participles": ["taught"]
+    },
+    "tell": {
+        "past_tenses": ["told"],
+        "past_participles": ["told"]
+    },
+    "think": {
+        "past_tenses": ["thought"],
+        "past_participles": ["thought"]
+    },
+    "throw": {
+        "past_tenses": ["threw"],
+        "past_participles": ["thrown"]
+    },
+    "understand": {
+        "past_tenses": ["understood"],
+        "past_participles": ["understood"]
+    },
+    "wake": {
+        "past_tenses": ["waked", "woke"],
+        "past_participles": ["waked", "woken"]
+    },
+    "wear": {
+        "past_tenses": ["wore"],
+        "past_participles": ["worn"]
+    },
+    "win": {
+        "past_tenses": ["won"],
+        "past_participles": ["won"]
+    },
+    "write": {
+        "past_tenses": ["wrote"],
+        "past_participles": ["written"]
+    }
+}

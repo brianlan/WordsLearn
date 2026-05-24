@@ -1,7 +1,7 @@
 ---
-description: check the word meanings and find out scarce meaning of a word if any.
+description: check the word meanings and find out scarce meaning of a word if any. $ARG
 ---
-帮我检查一下这个文件explanations/word_meaning.json里面， 每个单词所对应的多个meaning (即meaning[id]['explanation'])，判断一下有没有哪个meaning其实是这个词汇所对应的非常不常见的含义，或者是非常不常见的part of speech。帮我把你找到的所有的这些你认为不常见的词的meaning都列出来(切记不要修改这个原始文件)。具体的判断准则请参考以下介绍：
+帮我检查一下这个文件 $ARG 里面， 每个单词所对应的多个meaning (即meaning[id]['explanation'])，判断一下有没有哪个meaning其实是这个词汇所对应的非常不常见的含义，或者是非常不常见的part of speech。帮我把你找到的所有的这些你认为不常见的词的meaning都列出来(切记不要修改这个原始文件)。具体的判断准则请参考以下介绍：
 
 These must be natural, high-frequency phrases or patterns that people actually use in daily English. They should help learners know how to use the word in real sentences.
 

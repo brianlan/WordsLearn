@@ -1,5 +1,3 @@
-# Basic Rules
-
 ## 1. Think Before Coding
 
 **Don't assume. Don't hide confusion. Surface tradeoffs.**
@@ -56,7 +54,3 @@ For multi-step tasks, state a brief plan:
 
 Strong success criteria let you loop independently. Weak criteria ("make it work") require constant clarification.
 
-
-
-## 5. Python Environment
-Don't use system python env. Instead, use /Users/rlan/miniforge3/envs/generic_py312 if it is on Mac, and use /home/rlan/anaconda3/envs/mykik_py311 if it is on Linux. 

@@ -88,6 +88,10 @@ def generate_explanations(
             pass
 
     words_to_process = [word for word in sorted(vocabulary) if word not in explanations]
+    if words_to_process:
+        logger.info(f"Incremental words to generate ({len(words_to_process)}): {words_to_process}")
+    else:
+        logger.info("No new words to generate.")
     model_lock = threading.Lock()
 
     def get_model() -> str:

@@ -45,6 +45,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("-i", "--vocabularies", nargs="+", type=Path, required=True)
     parser.add_argument("--explanations-path", type=parent_ensured_path, required=True)
     parser.add_argument("--models", nargs="+", type=str, required=True)
+    parser.add_argument("--agent", type=str, required=True)
     parser.add_argument("--startover", default=False, action="store_true")
     parser.add_argument("--num-workers", type=int, default=1)
     args = parser.parse_args()
@@ -55,7 +56,12 @@ def parse_args() -> argparse.Namespace:
 def main(args) -> None:
     vocabulary = merge_vocabularies(read_vocabularies(args.vocabularies))
     explanations = generate_explanations(
-        vocabulary, args.explanations_path, args.models, startover=args.startover, num_workers=args.num_workers
+        vocabulary,
+        args.explanations_path,
+        args.models,
+        args.agent,
+        startover=args.startover,
+        num_workers=args.num_workers,
     )
     write_explanations(explanations, args.explanations_path)
 
@@ -75,6 +81,7 @@ def generate_explanations(
     vocabulary: set[str],
     explanations_path: Path,
     models: itertools.cycle,
+    agent: str,
     startover: bool = False,
     num_workers: int = 1,
 ) -> dict[str, dict]:
@@ -100,7 +107,7 @@ def generate_explanations(
 
     def explain_word(word: str) -> tuple[str, dict | None]:
         try:
-            return word, get_explanation(word, get_model=get_model)
+            return word, get_explanation(word, get_model=get_model, agent=agent)
         except GetExplanationError:
             logger.error("Max retries exceeded for word '{}', skipping.", word)
             return word, None
@@ -121,12 +128,12 @@ def write_explanations(explanations: dict[str, dict], explanations_path: Path) -
     logger.info(f"Successfully write explanations ({len(explanations)} words) to {explanations_path}.")
 
 
-def get_explanation(word: str, get_model: Callable[[], str], max_retries: int = 3) -> dict:
+def get_explanation(word: str, get_model: Callable[[], str], agent: str, max_retries: int = 3) -> dict:
     for attempt in range(max_retries + 1):
         model = get_model()
         prompt = f"Generate the explanation for word: {word}."
         result = subprocess.run(
-            ["opencode", "run", "--pure", "-m", model, "--agent", "word-explanation-generator", prompt],
+            ["opencode", "run", "--pure", "-m", model, "--agent", agent, prompt],
             capture_output=True,
             text=True,
         )

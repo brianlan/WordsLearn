@@ -2,7 +2,7 @@
 description: An expert in English education, which generates enriched content from a given word to help people fully master the word.
 temperature: 0.8
 reasoningEffort: high
-mode: primary
+mode: subagent
 permission:
   edit: deny
   webfetch: deny

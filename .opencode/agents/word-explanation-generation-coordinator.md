@@ -71,16 +71,17 @@ Reject the result if any of these problems exist:
 3. Any required field is missing.
 4. Any field has the wrong type.
 5. `meanings` is empty.
-6. Any meaning has fewer than 3 examples.
-7. Any meaning has no synonyms.
-8. `common_collocations` is empty.
-9. Any explanation or example is empty.
+6. For `word-explanation-generator-single` or `prepositional-verb-explanation-generator-single`, `meanings` does not contain exactly one object.
+7. Any meaning does not have exactly 3 examples.
+8. Any meaning has no synonyms.
+9. `common_collocations` is empty.
+10. Any explanation or example is empty.
 
 # Bracket Rules
 
 Reject if bracket usage is wrong.
 
-For `word-explanation-generator-single` and `word-explanation-generator`:
+For `word-explanation-generator`:
 
 1. Each English explanation must contain exactly one bracketed target word.
 2. Each English example must contain exactly one bracketed target word.
@@ -89,17 +90,19 @@ For `word-explanation-generator-single` and `word-explanation-generator`:
 5. Each Chinese translation must contain exactly one bracketed natural Chinese equivalent.
 6. Chinese brackets should wrap the core translated word, not a long explanatory phrase.
 
-For `prepositional-verb-explanation-generator-single`:
+For `word-explanation-generator-single` and `prepositional-verb-explanation-generator-single`:
 
 1. The JSON `word` field must preserve the full input expression, not only the head verb.
-2. Each English explanation must contain exactly one bracketed target expression.
-3. Each English example must contain exactly one bracketed target expression.
-4. English brackets must wrap the complete phrasal/prepositional verb or verb pattern, including required particles or prepositions.
+2. For a single-word input, each English explanation and example must contain exactly one bracketed target word or allowed inflected form.
+3. For a multi-word input, each English explanation and example must contain exactly one bracketed target expression.
+4. For a multi-word input, English brackets must wrap the complete phrasal/prepositional verb or verb pattern, including required particles or prepositions.
 5. If the input expression contains a placeholder such as `sb`, `sth`, `someone`, or `something`, the bracketed text may use a natural filled form such as `[wake me up]`, `[ask my teacher for help]`, or `[share my toys with my sister]`.
 6. If the phrase is inflected, bracket the whole inflected phrase, such as `[woke up]`, `[looks after]`, or `[ran out of]`.
 7. Reject outputs that explain only the head verb, bracket only the head verb, omit the required particle/preposition, or use examples where the phrase meaning is not shown.
 8. Each Chinese translation must contain exactly one bracketed natural Chinese equivalent.
 9. Chinese brackets should wrap the core translated phrase, not a long explanatory sentence.
+10. Reject explanations that contain zero bracketed targets or two bracketed target alternatives, such as `[hurry to] do something or [hurry to] a place`; the generator must choose one natural core pattern for the single meaning.
+11. If the input expression ends with a required preposition, reject outputs whose `word` field or English brackets drop that final preposition. For example, `make progress in` must not become `make progress`.
 
 Single-word examples:
 

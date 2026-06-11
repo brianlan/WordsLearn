@@ -43,11 +43,11 @@ class GetExplanationError(Exception):
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Generate word explanations JSON from vocabulary files.")
     parser.add_argument("-i", "--vocabularies", nargs="+", type=Path, required=True)
-    parser.add_argument("--explanations-path", type=parent_ensured_path, required=True)
+    parser.add_argument("--explanation-save-path", type=parent_ensured_path, required=True)
     parser.add_argument("--models", nargs="+", type=str, required=True)
     parser.add_argument("--agent", type=str, required=True)
-    parser.add_argument("--startover", default=False, action="store_true")
     parser.add_argument("--num-workers", type=int, default=1)
+    parser.add_argument("--existing-explanation-dir", type=Path, default=None)
     args = parser.parse_args()
     args.models = itertools.cycle(args.models)
     return args
@@ -55,15 +55,15 @@ def parse_args() -> argparse.Namespace:
 
 def main(args) -> None:
     vocabulary = merge_vocabularies(read_vocabularies(args.vocabularies))
+    existing_words = load_existing_words(args.existing_explanation_dir)
     explanations = generate_explanations(
         vocabulary,
-        args.explanations_path,
         args.models,
         args.agent,
-        startover=args.startover,
         num_workers=args.num_workers,
+        existing_words=existing_words,
     )
-    write_explanations(explanations, args.explanations_path)
+    write_explanations(explanations, args.explanation_save_path)
 
 
 def read_vocabularies(vocabulary_paths: list[Path]) -> list[list[str]]:
@@ -77,24 +77,34 @@ def merge_vocabularies(vocabularies: list[list[str]]) -> set[str]:
     return set(itertools.chain.from_iterable(vocabularies))
 
 
+def load_existing_words(folder: Path | None) -> set[str]:
+    if folder is None:
+        return set()
+    existing: set[str] = set()
+    if not folder.exists():
+        logger.warning(f"Existing words folder {folder} does not exist.")
+        return existing
+    for json_file in folder.rglob("*.json"):
+        try:
+            data = read_json(json_file)
+            existing.update(data.keys())
+        except Exception as e:
+            logger.warning(f"Failed to read {json_file}: {e}")
+    logger.info(f"Loaded {len(existing)} existing words from {folder}.")
+    return existing
+
+
 def generate_explanations(
     vocabulary: set[str],
-    explanations_path: Path,
     models: itertools.cycle,
     agent: str,
-    startover: bool = False,
     num_workers: int = 1,
+    existing_words: set[str] | None = None,
 ) -> dict[str, dict]:
     logger.info(f"Generating explanations for {len(vocabulary)} words.")
-    explanations: dict[str, dict] = {}
-    if not startover:
-        try:
-            logger.info(f"Reading explanations from {explanations_path}.")
-            explanations = read_json(explanations_path)
-        except FileNotFoundError:
-            pass
-
-    words_to_process = [word for word in sorted(vocabulary) if word not in explanations]
+    existing_words = existing_words or set()
+    explanations = {}
+    words_to_process = [word for word in sorted(vocabulary) if word not in existing_words]
     if words_to_process:
         logger.info(f"Incremental words to generate ({len(words_to_process)}): {words_to_process}")
     else:
@@ -122,18 +132,18 @@ def generate_explanations(
     return explanations
 
 
-def write_explanations(explanations: dict[str, dict], explanations_path: Path) -> None:
-    with open(explanations_path, "w", encoding="utf-8") as f:
+def write_explanations(explanations: dict[str, dict], explanation_save_path: Path) -> None:
+    with open(explanation_save_path, "w", encoding="utf-8") as f:
         json.dump(explanations, f, ensure_ascii=False)
-    logger.info(f"Successfully write explanations ({len(explanations)} words) to {explanations_path}.")
+    logger.info(f"Successfully write explanations ({len(explanations)} words) to {explanation_save_path}.")
 
 
 def get_explanation(word: str, get_model: Callable[[], str], agent: str, max_retries: int = 3) -> dict:
     for attempt in range(max_retries + 1):
         model = get_model()
-        prompt = f"Generate the explanation for word: {word}."
+        prompt = f"Generate the explanation for word: {word} using subagent_type: {agent}."
         result = subprocess.run(
-            ["opencode", "run", "--pure", "-m", model, "--agent", agent, prompt],
+            ["opencode", "run", "--pure", "-m", model, "--agent", "word-explanation-generation-coordinator", prompt],
             capture_output=True,
             text=True,
         )

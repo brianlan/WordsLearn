@@ -1,0 +1,1528 @@
+{
+    "New York": {
+        "word": "New York",
+        "american_ipa": "/nuː ˈjɔːrk/",
+        "british_ipa": "/njuː ˈjɔːk/",
+        "derived_forms": [
+            "New Yorker (n.)",
+            "New York-style (adj.)"
+        ],
+        "common_collocations": [
+            "live in New York",
+            "visit New York",
+            "move to New York"
+        ],
+        "meanings": [
+            {
+                "part_of_speech": "proper noun",
+                "explanation": "[New York] is a very big city in the United States, famous for its tall buildings, yellow taxis, and places like Central Park and the Statue of Liberty.",
+                "examples": [
+                    {
+                        "english": "My family went to [New York] last summer and saw the Statue of Liberty.",
+                        "chinese": "我家去年夏天去了[纽约]，看了自由女神像。"
+                    },
+                    {
+                        "english": "[New York] has many tall buildings and busy streets full of people.",
+                        "chinese": "[纽约]有很多高楼和热闹的街道，街上到处都是人。"
+                    },
+                    {
+                        "english": "I want to visit [New York] one day and play in Central Park.",
+                        "chinese": "我想有一天去[纽约]玩，在中央公园里玩耍。"
+                    }
+                ],
+                "synonyms": [
+                    "NYC",
+                    "the Big Apple",
+                    "New York City"
+                ]
+            }
+        ],
+        "generated_by": "opencode/deepseek-v4-flash-free"
+    },
+    "at last": {
+        "word": "at last",
+        "american_ipa": "/æt læst/",
+        "british_ipa": "/æt lɑːst/",
+        "derived_forms": [],
+        "common_collocations": [
+            "at long last",
+            "and at last",
+            "waited at last"
+        ],
+        "meanings": [
+            {
+                "part_of_speech": "phrase",
+                "explanation": "You say [at last] when something you have been waiting or hoping for finally happens.",
+                "examples": [
+                    {
+                        "english": "It rained all morning, but the sun came out [at last].",
+                        "chinese": "雨下了一整个上午，不过太阳[终于]出来了。"
+                    },
+                    {
+                        "english": "We waited a long time, and the bus arrived [at last].",
+                        "chinese": "我们等了好久，公交车[终于]来了。"
+                    },
+                    {
+                        "english": "My birthday is [at last] here, and I am so excited!",
+                        "chinese": "我的生日[终于]到了，我好开心！"
+                    }
+                ],
+                "synonyms": [
+                    "finally",
+                    "eventually",
+                    "in the end"
+                ]
+            }
+        ],
+        "generated_by": "zhipuai-coding-plan/glm-5-turbo"
+    },
+    "be part of": {
+        "word": "be part of",
+        "american_ipa": "/bi pɑːrt əv/",
+        "british_ipa": "/bi pɑːt ɒv/",
+        "derived_forms": [
+            "part of (phrase)",
+            "take part in (phrasal verb)",
+            "play a part in (phrase)"
+        ],
+        "common_collocations": [
+            "be part of a team",
+            "be part of the family",
+            "be part of everyday life"
+        ],
+        "meanings": [
+            {
+                "part_of_speech": "verb phrase",
+                "explanation": "If someone or something [is part of] a group, organization, or activity, they are included in it or belong to it.",
+                "examples": [
+                    {
+                        "english": "I [am part of] the school art club and I love drawing with my friends.",
+                        "chinese": "我是学校美术俱乐部的[一员]，我喜欢和朋友们一起画画。"
+                    },
+                    {
+                        "english": "This little river [is part of] the park where we play every day.",
+                        "chinese": "这条小河是我们每天玩耍的公园的[一部分]。"
+                    },
+                    {
+                        "english": "My dad says helping with dinner [is part of] being a good family member.",
+                        "chinese": "爸爸说帮忙做晚饭是做好家庭[成员]的一部分。"
+                    }
+                ],
+                "synonyms": [
+                    "belong to",
+                    "be included in"
+                ]
+            }
+        ],
+        "generated_by": "opencode/deepseek-v4-flash-free"
+    },
+    "agree on sth.": {
+        "word": "agree on sth",
+        "american_ipa": "/əˈɡriː ɑːn/",
+        "british_ipa": "/əˈɡriː ɒn/",
+        "derived_forms": [
+            "agreed (adj.)",
+            "agreement (n.)"
+        ],
+        "common_collocations": [
+            "agree on a plan",
+            "agree on a price",
+            "agree on a time"
+        ],
+        "meanings": [
+            {
+                "part_of_speech": "phrasal verb",
+                "explanation": "If people [agree on] something, they make a decision together after talking about it, or they share the same idea about it.",
+                "examples": [
+                    {
+                        "english": "We [agree on] a place to eat dinner tonight.",
+                        "chinese": "我们[商定]了今晚吃饭的地方。"
+                    },
+                    {
+                        "english": "My friends and I [agree on] the rules for our club.",
+                        "chinese": "我和朋友们[商定]了俱乐部的规则。"
+                    },
+                    {
+                        "english": "Mom and Dad [agree on] where to go on holiday.",
+                        "chinese": "爸爸妈妈[商定]了去哪里度假。"
+                    }
+                ],
+                "synonyms": [
+                    "decide on",
+                    "settle on"
+                ]
+            }
+        ],
+        "generated_by": "opencode-go/deepseek-v4-flash"
+    },
+    "Egypt": {
+        "word": "Egypt",
+        "american_ipa": "/ˈiːdʒɪpt/",
+        "british_ipa": "/ˈiːdʒɪpt/",
+        "derived_forms": [
+            "Egyptian (n. & adj.)",
+            "Egyptology (n.)",
+            "Egyptianize (v.)"
+        ],
+        "common_collocations": [
+            "ancient Egypt",
+            "the pyramids of Egypt",
+            "visit Egypt"
+        ],
+        "meanings": [
+            {
+                "part_of_speech": "proper noun",
+                "explanation": "[Egypt] is a country in northeastern Africa, famous for its ancient civilization and great stone pyramids.",
+                "examples": [
+                    {
+                        "english": "The most famous ancient pyramids are located in [Egypt].",
+                        "chinese": "最著名的古金字塔坐落于[埃及]。"
+                    },
+                    {
+                        "english": "My dad took a vacation to [Egypt] last summer holiday.",
+                        "chinese": "我爸爸去年暑假去[埃及]度假了。"
+                    },
+                    {
+                        "english": "[Egypt] has one of the longest and most interesting histories of any country.",
+                        "chinese": "[埃及]拥有世界上最悠久也最有趣的历史之一。"
+                    }
+                ],
+                "synonyms": [
+                    "the Arab Republic of Egypt"
+                ]
+            }
+        ],
+        "generated_by": "ark-coding-plan/doubao-seed-2.0-lite"
+    },
+    "England": {
+        "word": "England",
+        "american_ipa": "/ˈɪŋɡlənd/",
+        "british_ipa": "/ˈɪŋɡlənd/",
+        "derived_forms": [
+            "English (adj.)",
+            "Englishman (n.)",
+            "Englishwoman (n.)"
+        ],
+        "common_collocations": [
+            "in England",
+            "from England",
+            "the south of England"
+        ],
+        "meanings": [
+            {
+                "part_of_speech": "noun",
+                "explanation": "[England] is a country in Europe that is part of the United Kingdom.",
+                "examples": [
+                    {
+                        "english": "My pen pal lives in [England].",
+                        "chinese": "我的笔友住在[英格兰]。"
+                    },
+                    {
+                        "english": "Last summer, we flew to [England] for a holiday.",
+                        "chinese": "去年夏天，我们坐飞机去[英格兰]度假。"
+                    },
+                    {
+                        "english": "[England] is famous for its green hills and old castles.",
+                        "chinese": "[英格兰]以其翠绿的山丘和古老的城堡闻名。"
+                    }
+                ],
+                "synonyms": [
+                    "Albion"
+                ]
+            }
+        ],
+        "generated_by": "zhipuai-coding-plan/glm-5-turbo"
+    },
+    "busy with": {
+        "word": "busy",
+        "american_ipa": "/ˈbɪzi/",
+        "british_ipa": "/ˈbɪzi/",
+        "derived_forms": [
+            "busily (adv.)",
+            "business (n.)",
+            "busyness (n.)"
+        ],
+        "common_collocations": [
+            "busy with something",
+            "busy doing something",
+            "busy oneself with"
+        ],
+        "meanings": [
+            {
+                "part_of_speech": "adjective",
+                "explanation": "If you are [busy], you have a lot of things to do and are working hard.",
+                "examples": [
+                    {
+                        "english": "My mom is [busy] cooking in the kitchen.",
+                        "chinese": "我妈妈正在厨房里[忙着]做饭。"
+                    },
+                    {
+                        "english": "The children are [busy] doing their homework.",
+                        "chinese": "孩子们正在[忙着]做作业。"
+                    },
+                    {
+                        "english": "Dad is too [busy] to play with me today.",
+                        "chinese": "爸爸今天太[忙]了，没空陪我玩。"
+                    }
+                ],
+                "synonyms": [
+                    "occupied",
+                    "engaged"
+                ]
+            },
+            {
+                "part_of_speech": "verb",
+                "explanation": "If you [busy] yourself with something, you spend time doing it to keep occupied.",
+                "examples": [
+                    {
+                        "english": "Grandpa [busies] himself in the garden every morning.",
+                        "chinese": "爷爷每天早上都在花园里[忙活]。"
+                    },
+                    {
+                        "english": "She [busied] herself with tidying up her room.",
+                        "chinese": "她[忙着]收拾自己的房间。"
+                    },
+                    {
+                        "english": "He [busies] himself reading storybooks after school.",
+                        "chinese": "他放学后[忙着]看故事书。"
+                    }
+                ],
+                "synonyms": [
+                    "occupy",
+                    "engage"
+                ]
+            }
+        ],
+        "generated_by": "ark-coding-plan/deepseek-v4-flash"
+    },
+    "come true": {
+        "word": "come true",
+        "american_ipa": "/kʌm ˈtruː/",
+        "british_ipa": "/kʌm ˈtruː/",
+        "derived_forms": [
+            "came true (past tense)",
+            "coming true (present participle)"
+        ],
+        "common_collocations": [
+            "dreams come true",
+            "wishes come true",
+            "make a dream come true"
+        ],
+        "meanings": [
+            {
+                "part_of_speech": "phrasal verb",
+                "explanation": "When a dream, wish, or prediction [comes true], it actually happens or becomes real.",
+                "examples": [
+                    {
+                        "english": "I hope my birthday wish will [come true].",
+                        "chinese": "我希望我的生日愿望能[实现]。"
+                    },
+                    {
+                        "english": "Her dream of becoming a singer finally [came true].",
+                        "chinese": "她想当歌手的梦想终于[成真]了。"
+                    },
+                    {
+                        "english": "My mom says if you work hard, your wishes can [come true].",
+                        "chinese": "妈妈说只要你努力，愿望就能[实现]。"
+                    }
+                ],
+                "synonyms": [
+                    "become real",
+                    "happen"
+                ]
+            }
+        ],
+        "generated_by": "zhipuai-coding-plan/glm-5-turbo"
+    },
+    "as long as": {
+        "word": "as long as",
+        "american_ipa": "/æz ˈlɔːŋ æz/",
+        "british_ipa": "/əz ˈlɒŋ əz/",
+        "derived_forms": [],
+        "common_collocations": [
+            "as long as you're happy",
+            "as long as it's okay",
+            "as long as you promise"
+        ],
+        "meanings": [
+            {
+                "part_of_speech": "conjunction",
+                "explanation": "You use [as long as] to say that one thing can only happen if another thing happens or is true.",
+                "examples": [
+                    {
+                        "english": "You can play outside [as long as] you finish your homework first.",
+                        "chinese": "你可以出去玩，[只要]你先做完作业。"
+                    },
+                    {
+                        "english": "I'll go to the zoo with you [as long as] it doesn't rain this Saturday.",
+                        "chinese": "[只要]这周六不下雨，我就陪你去动物园。"
+                    },
+                    {
+                        "english": "You can borrow my book [as long as] you give it back next week.",
+                        "chinese": "[只要]你下周把书还我，你就可以借我的书。"
+                    }
+                ],
+                "synonyms": [
+                    "if",
+                    "so long as",
+                    "provided that"
+                ]
+            }
+        ],
+        "generated_by": "ark-coding-plan/doubao-seed-2.0-lite"
+    },
+    "clue": {
+        "word": "clue",
+        "american_ipa": "/kluː/",
+        "british_ipa": "/kluː/",
+        "derived_forms": [
+            "clueless (adj.)",
+            "clueful (adj.)",
+            "clued (adj.)"
+        ],
+        "common_collocations": [
+            "give someone a clue",
+            "find a clue",
+            "a clue about something"
+        ],
+        "meanings": [
+            {
+                "part_of_speech": "noun",
+                "explanation": "A [clue] is a piece of information that helps you solve a problem, answer a question, or find something hidden or missing.",
+                "examples": [
+                    {
+                        "english": "My mom gave me a [clue] to help me find my lost stuffed bear.",
+                        "chinese": "妈妈给了我一条[线索]帮我找我丢失的玩具熊。"
+                    },
+                    {
+                        "english": "We found a hidden [clue] during the treasure hunt at my birthday party.",
+                        "chinese": "我生日派对的寻宝游戏里，我们找到了一条隐藏的[线索]。"
+                    },
+                    {
+                        "english": "Can you give me a [clue] about what surprise you have for me?",
+                        "chinese": "你能给我一点[线索]，说说你给我准备了什么惊喜吗？"
+                    }
+                ],
+                "synonyms": [
+                    "hint",
+                    "pointer",
+                    "tip"
+                ]
+            }
+        ],
+        "generated_by": "ark-coding-plan/doubao-seed-2.0-lite"
+    },
+    "agree to do sth.": {
+        "word": "agree to do sth.",
+        "american_ipa": "/əˈɡriː tə duː/",
+        "british_ipa": "/əˈɡriː tə duː/",
+        "derived_forms": [
+            "agreement (n.)",
+            "agreeable (adj.)",
+            "agreed (adj.)"
+        ],
+        "common_collocations": [
+            "agree to help",
+            "agree to meet",
+            "agree to share"
+        ],
+        "meanings": [
+            {
+                "part_of_speech": "verb phrase",
+                "explanation": "If you [agree to do something], you say yes when someone asks you to do it, or you decide with others that you will do it.",
+                "examples": [
+                    {
+                        "english": "I [agree to help] my mom set the table for dinner.",
+                        "chinese": "我[同意帮]妈妈摆好晚饭的桌子。"
+                    },
+                    {
+                        "english": "My friend [agreed to come] to my birthday party.",
+                        "chinese": "我的朋友[同意来]参加我的生日派对。"
+                    },
+                    {
+                        "english": "We [agreed to share] our snacks during the trip.",
+                        "chinese": "我们[同意分享]旅途中的零食。"
+                    }
+                ],
+                "synonyms": [
+                    "promise to",
+                    "consent to"
+                ]
+            }
+        ],
+        "generated_by": "ark-coding-plan/deepseek-v4-flash"
+    },
+    "decide on": {
+        "word": "decide",
+        "american_ipa": "/dɪˈsaɪd/",
+        "british_ipa": "/dɪˈsaɪd/",
+        "derived_forms": [
+            "decides (third person singular)",
+            "deciding (present participle)",
+            "decided (past tense/past participle)"
+        ],
+        "common_collocations": [
+            "decide to do something",
+            "decide on something",
+            "decide between"
+        ],
+        "meanings": [
+            {
+                "part_of_speech": "verb",
+                "explanation": "To [decide] means to make a choice or come to a conclusion after thinking.",
+                "examples": [
+                    {
+                        "english": "I can't [decide] which color to pick for my backpack.",
+                        "chinese": "我[决定]不了该选哪个颜色的书包。"
+                    },
+                    {
+                        "english": "We [decided] to go to the park after school.",
+                        "chinese": "我们[决定]放学后去公园玩。"
+                    },
+                    {
+                        "english": "Have you [decided] what to get Mom for her birthday?",
+                        "chinese": "你[决定]好给妈妈买什么生日礼物了吗？"
+                    }
+                ],
+                "synonyms": [
+                    "choose",
+                    "pick",
+                    "settle on"
+                ]
+            }
+        ],
+        "generated_by": "ark-coding-plan/deepseek-v4-flash"
+    },
+    "corridor": {
+        "word": "corridor",
+        "american_ipa": "/ˈkɔːrɪdər/",
+        "british_ipa": "/ˈkɒrɪdɔː/",
+        "derived_forms": [
+            "corridors (plural)"
+        ],
+        "common_collocations": [
+            "down the corridor",
+            "along the corridor",
+            "hotel corridor"
+        ],
+        "meanings": [
+            {
+                "part_of_speech": "noun",
+                "explanation": "A [corridor] is a long narrow passage inside a building with doors on each side that lead to rooms.",
+                "examples": [
+                    {
+                        "english": "The students walked down the [corridor] to their classroom.",
+                        "chinese": "学生们沿着[走廊]走向他们的教室。"
+                    },
+                    {
+                        "english": "Our hotel room is at the very end of the [corridor].",
+                        "chinese": "我们酒店的房间在[走廊]的最尽头。"
+                    },
+                    {
+                        "english": "Please walk quietly in the [corridor] so you don't disturb other classes.",
+                        "chinese": "请在[走廊]里轻声走路，不要打扰别的班上课。"
+                    }
+                ],
+                "synonyms": [
+                    "hallway",
+                    "passage",
+                    "hall"
+                ]
+            }
+        ],
+        "generated_by": "opencode-go/deepseek-v4-flash"
+    },
+    "discussion": {
+        "word": "discussion",
+        "american_ipa": "/dɪˈskʌʃn/",
+        "british_ipa": "/dɪˈskʌʃn/",
+        "derived_forms": [
+            "discuss (v.)",
+            "discussant (n.)",
+            "discussive (adj.)"
+        ],
+        "common_collocations": [
+            "class discussion",
+            "group discussion",
+            "have a discussion"
+        ],
+        "meanings": [
+            {
+                "part_of_speech": "noun",
+                "explanation": "A [discussion] is a conversation in which people talk about a particular topic together, sharing different ideas and opinions.",
+                "examples": [
+                    {
+                        "english": "We had a [discussion] about our favorite cartoon in class today.",
+                        "chinese": "今天我们在班上开展了一场关于最喜欢的动画片的[讨论]。"
+                    },
+                    {
+                        "english": "My family had a [discussion] about where to go for our weekend trip.",
+                        "chinese": "我们一家人就周末去哪旅行展开了一场[讨论]。"
+                    },
+                    {
+                        "english": "The teacher asked us to join the [discussion] about protecting trees.",
+                        "chinese": "老师邀请我们加入关于保护树木的[讨论]。"
+                    }
+                ],
+                "synonyms": [
+                    "conversation",
+                    "talk",
+                    "debate"
+                ]
+            }
+        ],
+        "generated_by": "ark-coding-plan/doubao-seed-2.0-lite"
+    },
+    "exhibition": {
+        "word": "exhibition",
+        "american_ipa": "/ˌɛksɪˈbɪʃən/",
+        "british_ipa": "/ˌeksɪˈbɪʃən/",
+        "derived_forms": [
+            "exhibitor (n.)",
+            "exhibit (v.)",
+            "exhibitionist (n.)"
+        ],
+        "common_collocations": [
+            "an art exhibition",
+            "hold an exhibition",
+            "on exhibition"
+        ],
+        "meanings": [
+            {
+                "part_of_speech": "noun",
+                "explanation": "An [exhibition] is a public event where things such as paintings, photographs, or products are shown for people to look at.",
+                "examples": [
+                    {
+                        "english": "We went to see an art [exhibition] at the museum on Sunday.",
+                        "chinese": "我们周日去博物馆看了一个艺术[展览]。"
+                    },
+                    {
+                        "english": "The school held a science [exhibition] in the gymnasium.",
+                        "chinese": "学校在体育馆举办了一场科学[展览]。"
+                    },
+                    {
+                        "english": "There is a toy [exhibition] in the city center this week.",
+                        "chinese": "这周市中心有一个玩具[展览会]。"
+                    }
+                ],
+                "synonyms": [
+                    "show",
+                    "display",
+                    "showcase"
+                ]
+            }
+        ],
+        "generated_by": "ark-coding-plan/deepseek-v4-flash"
+    },
+    "condition": {
+        "word": "condition",
+        "american_ipa": "/kənˈdɪʃən/",
+        "british_ipa": "/kənˈdɪʃən/",
+        "derived_forms": [
+            "conditional (adj.)",
+            "conditioner (n.)",
+            "conditioning (n.)"
+        ],
+        "common_collocations": [
+            "in good condition",
+            "on condition that",
+            "medical condition"
+        ],
+        "meanings": [
+            {
+                "part_of_speech": "noun",
+                "explanation": "[Condition] is the state that something or someone is in, especially when talking about how good or bad it is.",
+                "examples": [
+                    {
+                        "english": "My old bike is in excellent [condition] because I take good care of it.",
+                        "chinese": "我的旧自行车保养得很好，[状况]很棒。"
+                    },
+                    {
+                        "english": "The doctor said my heart is in good [condition].",
+                        "chinese": "医生说我的心脏[状况]良好。"
+                    },
+                    {
+                        "english": "This house is in terrible [condition] and needs many repairs.",
+                        "chinese": "这栋房子[状况]很糟糕，需要很多维修。"
+                    }
+                ],
+                "synonyms": [
+                    "state",
+                    "repair",
+                    "shape"
+                ]
+            },
+            {
+                "part_of_speech": "noun",
+                "explanation": "A [condition] is a rule or requirement that must be accepted before something else can happen.",
+                "examples": [
+                    {
+                        "english": "One [condition] of the game is that everyone must follow the rules.",
+                        "chinese": "这个游戏的一个[条件]是每个人都必须遵守规则。"
+                    },
+                    {
+                        "english": "She agreed to help me on the [condition] that I finish my homework first.",
+                        "chinese": "她同意帮我，[条件]是我得先写完作业。"
+                    },
+                    {
+                        "english": "The store's return policy has several [conditions].",
+                        "chinese": "这家店的退货政策有好几个[条件]。"
+                    }
+                ],
+                "synonyms": [
+                    "requirement",
+                    "term",
+                    "rule"
+                ]
+            }
+        ],
+        "generated_by": "opencode/deepseek-v4-flash-free"
+    },
+    "drag": {
+        "word": "drag",
+        "american_ipa": "/dræɡ/",
+        "british_ipa": "/dræɡ/",
+        "derived_forms": [
+            "drags (v. third person)",
+            "dragged (v. past tense)",
+            "dragging (v. present participle)"
+        ],
+        "common_collocations": [
+            "drag something across the floor",
+            "drag someone by the hand",
+            "drag a heavy bag"
+        ],
+        "meanings": [
+            {
+                "part_of_speech": "verb",
+                "explanation": "To [drag] something means to pull it along a surface with effort, especially because it is heavy or difficult to move.",
+                "examples": [
+                    {
+                        "english": "I helped my dad [drag] the big box into the house.",
+                        "chinese": "我帮爸爸把大箱子[拖]进了屋里。"
+                    },
+                    {
+                        "english": "The little girl [dragged] her teddy bear behind her.",
+                        "chinese": "小女孩[拖着]她的泰迪熊走在后面。"
+                    },
+                    {
+                        "english": "We had to [drag] the heavy table across the room.",
+                        "chinese": "我们不得不把沉重的桌子[拖]过房间。"
+                    }
+                ],
+                "synonyms": [
+                    "pull",
+                    "haul",
+                    "tug"
+                ]
+            }
+        ],
+        "generated_by": "opencode/deepseek-v4-flash-free"
+    },
+    "explorer": {
+        "word": "explorer",
+        "american_ipa": "/ɪkˈsplɔːrər/",
+        "british_ipa": "/ɪkˈsplɔːrə(r)/",
+        "derived_forms": [
+            "explore (v.)",
+            "exploration (n.)",
+            "exploratory (adj.)"
+        ],
+        "common_collocations": [
+            "space explorer",
+            "polar explorer",
+            "famous explorer"
+        ],
+        "meanings": [
+            {
+                "part_of_speech": "noun",
+                "explanation": "An [explorer] is a person who travels to unknown or unfamiliar places in order to find out what is there.",
+                "examples": [
+                    {
+                        "english": "The famous [explorer] sailed across the big ocean to find new land.",
+                        "chinese": "这位著名的[探险家]乘船穿越大洋去寻找新陆地。"
+                    },
+                    {
+                        "english": "My little brother dreams of becoming a space [explorer] when he grows up.",
+                        "chinese": "我弟弟梦想长大后成为一名太空[探险家]。"
+                    },
+                    {
+                        "english": "This old storybook tells about a brave [explorer] in the Amazon rainforest.",
+                        "chinese": "这本旧故事书讲述了一位在亚马逊雨林里勇敢的[探险家]的故事。"
+                    }
+                ],
+                "synonyms": [
+                    "adventurer",
+                    "pioneer",
+                    "traveler"
+                ]
+            }
+        ],
+        "generated_by": "ark-coding-plan/doubao-seed-2.0-lite"
+    },
+    "investigate": {
+        "word": "investigate",
+        "american_ipa": "/ɪnˈvɛstɪˌɡeɪt/",
+        "british_ipa": "/ɪnˈvestɪɡeɪt/",
+        "derived_forms": [
+            "investigation (n.)",
+            "investigator (n.)",
+            "investigative (adj.)"
+        ],
+        "common_collocations": [
+            "investigate a crime",
+            "investigate the cause",
+            "investigate a complaint"
+        ],
+        "meanings": [
+            {
+                "part_of_speech": "verb",
+                "explanation": "To [investigate] something means to try to find out the truth about it, such as a crime, a problem, or an event, by carefully looking at the facts.",
+                "examples": [
+                    {
+                        "english": "The police came to [investigate] the strange noise last night.",
+                        "chinese": "警察昨晚来[调查]那个奇怪的声音。"
+                    },
+                    {
+                        "english": "My little brother likes to [investigate] why ants carry food in a line.",
+                        "chinese": "我弟弟喜欢[探究]蚂蚁为什么排成一排搬食物。"
+                    },
+                    {
+                        "english": "The teacher will [investigate] who broke the classroom window.",
+                        "chinese": "老师会[调查]是谁打破了教室的窗户。"
+                    }
+                ],
+                "synonyms": [
+                    "examine",
+                    "look into",
+                    "probe"
+                ]
+            }
+        ],
+        "generated_by": "opencode-go/deepseek-v4-flash"
+    },
+    "lifeboat": {
+        "word": "lifeboat",
+        "american_ipa": "/ˈlaɪfboʊt/",
+        "british_ipa": "/ˈlaɪfbəʊt/",
+        "derived_forms": [
+            "lifeboatman (n.)",
+            "lifeboat station (n.)",
+            "lifeboat drill (n.)"
+        ],
+        "common_collocations": [
+            "launch a lifeboat",
+            "get into a lifeboat",
+            "lifeboat drill"
+        ],
+        "meanings": [
+            {
+                "part_of_speech": "noun",
+                "explanation": "A [lifeboat] is a small boat that is used to rescue people who are in danger at sea, or that is kept on a ship for use in an emergency.",
+                "examples": [
+                    {
+                        "english": "The captain told everyone to get into the [lifeboat] when the ship hit a big storm.",
+                        "chinese": "船遇到大风暴时，船长让大家赶紧上[救生艇]。"
+                    },
+                    {
+                        "english": "The coast guard sent a [lifeboat] to help the family whose boat had broken down.",
+                        "chinese": "海岸警卫队派了一艘[救生艇]去帮助那家船坏掉的人。"
+                    },
+                    {
+                        "english": "Before the trip, we practiced a [lifeboat] drill so everyone knew what to do.",
+                        "chinese": "出发前，我们演练了[救生艇]逃生，这样每个人都知道该怎么做。"
+                    }
+                ],
+                "synonyms": [
+                    "liferaft",
+                    "rescue boat"
+                ]
+            }
+        ],
+        "generated_by": "ark-coding-plan/deepseek-v4-flash"
+    },
+    "look around": {
+        "word": "look around",
+        "american_ipa": "/ˈlʊk əˈraʊnd/",
+        "british_ipa": "/ˈlʊk əˈraʊnd/",
+        "derived_forms": [],
+        "common_collocations": [
+            "just look around",
+            "look around the shop",
+            "look around the room"
+        ],
+        "meanings": [
+            {
+                "part_of_speech": "phrasal verb",
+                "explanation": "If you [look around], you walk around a place and look at different things to see what is there.",
+                "examples": [
+                    {
+                        "english": "Let's [look around] the park to see what we can play with.",
+                        "chinese": "让我们在公园里[逛逛]，看看有什么好玩的。"
+                    },
+                    {
+                        "english": "When you get to the new school, just [look around] first.",
+                        "chinese": "到了新学校，先[转转]吧。"
+                    },
+                    {
+                        "english": "She likes to [look around] the toy store before buying anything.",
+                        "chinese": "她喜欢在玩具店里先[看看]，然后再决定买什么。"
+                    }
+                ],
+                "synonyms": [
+                    "explore",
+                    "check out",
+                    "browse"
+                ]
+            }
+        ],
+        "generated_by": "zhipuai-coding-plan/glm-5-turbo"
+    },
+    "in bad condition": {
+        "word": "in bad condition",
+        "american_ipa": "/ɪn bæd kənˈdɪʃən/",
+        "british_ipa": "/ɪn bæd kənˈdɪʃən/",
+        "derived_forms": [
+            "in worse condition",
+            "in poor condition",
+            "in the worst condition"
+        ],
+        "common_collocations": [
+            "be in bad condition",
+            "still in bad condition",
+            "in bad condition from"
+        ],
+        "meanings": [
+            {
+                "part_of_speech": "adjective phrase",
+                "explanation": "If something is [in bad condition], it is damaged, worn out, or not working properly because it is old or has been used a lot.",
+                "examples": [
+                    {
+                        "english": "This old teddy bear is [in bad condition].",
+                        "chinese": "这只旧泰迪熊[状况不佳]。"
+                    },
+                    {
+                        "english": "The library book was [in bad condition] with torn pages.",
+                        "chinese": "那本图书馆的书[状况不佳]，书页都撕破了。"
+                    },
+                    {
+                        "english": "My bike is [in bad condition] and needs new tires.",
+                        "chinese": "我的自行车[状况不佳]，需要换新轮胎。"
+                    },
+                    {
+                        "english": "We found a wooden chair [in bad condition] on the street.",
+                        "chinese": "我们在街上发现了一把[状况不佳]的木椅子。"
+                    }
+                ],
+                "synonyms": [
+                    "worn out",
+                    "damaged",
+                    "in poor shape"
+                ]
+            }
+        ],
+        "generated_by": "opencode/deepseek-v4-flash-free"
+    },
+    "reminder": {
+        "word": "reminder",
+        "american_ipa": "/rɪˈmaɪndər/",
+        "british_ipa": "/rɪˈmaɪndər/",
+        "derived_forms": [
+            "remind (v.)",
+            "reminding (present participle)"
+        ],
+        "common_collocations": [
+            "a gentle reminder",
+            "set a reminder",
+            "send a reminder"
+        ],
+        "meanings": [
+            {
+                "part_of_speech": "noun",
+                "explanation": "A [reminder] is something that helps you remember to do something or reminds you about something important.",
+                "examples": [
+                    {
+                        "english": "Mom put a [reminder] on the fridge so I wouldn't forget my homework.",
+                        "chinese": "妈妈在冰箱上贴了一张[提醒]纸条，这样我就不会忘记写作业了。"
+                    },
+                    {
+                        "english": "My phone alarm is a [reminder] for me to drink water every hour.",
+                        "chinese": "手机闹钟每小时响一次，[提醒]我该喝水了。"
+                    },
+                    {
+                        "english": "Thank you for the [reminder] about the school trip tomorrow.",
+                        "chinese": "谢谢你关于明天学校郊游的[提醒]。"
+                    }
+                ],
+                "synonyms": [
+                    "note",
+                    "memo"
+                ]
+            }
+        ],
+        "generated_by": "zhipuai-coding-plan/glm-5-turbo"
+    },
+    "passenger": {
+        "word": "passenger",
+        "american_ipa": "/ˈpæsəndʒər/",
+        "british_ipa": "/ˈpæsɪndʒə/",
+        "derived_forms": [
+            "passenger seat (n.)",
+            "passenger train (n.)",
+            "passenger list (n.)"
+        ],
+        "common_collocations": [
+            "a passenger on a bus",
+            "pick up a passenger",
+            "front passenger seat"
+        ],
+        "meanings": [
+            {
+                "part_of_speech": "noun",
+                "explanation": "A [passenger] is a person who travels in a car, bus, train, plane, or other vehicle but is not the driver or the person operating it.",
+                "examples": [
+                    {
+                        "english": "The bus stopped to let a [passenger] get off.",
+                        "chinese": "公交车停下来让一位[乘客]下车。"
+                    },
+                    {
+                        "english": "My dad drives the car and I sit in the back as a [passenger].",
+                        "chinese": "爸爸开车，我坐在后面当[乘客]。"
+                    },
+                    {
+                        "english": "All [passengers] must fasten their seat belts before the plane takes off.",
+                        "chinese": "所有[乘客]在飞机起飞前都必须系好安全带。"
+                    }
+                ],
+                "synonyms": [
+                    "rider",
+                    "traveler"
+                ]
+            }
+        ],
+        "generated_by": "ark-coding-plan/deepseek-v4-flash"
+    },
+    "live on": {
+        "word": "live on",
+        "american_ipa": "/lɪv ˈɑːn/",
+        "british_ipa": "/lɪv ˈɒn/",
+        "derived_forms": [
+            "lives on (3rd person singular present)",
+            "living on (present participle/gerund)",
+            "lived on (past tense/past participle)"
+        ],
+        "common_collocations": [
+            "live on a pension",
+            "live on wild plants",
+            "live on a small income"
+        ],
+        "meanings": [
+            {
+                "part_of_speech": "phrasal verb",
+                "explanation": "To [live on] means to use a particular amount of money or eat a particular type of food in order to survive and stay alive.",
+                "examples": [
+                    {
+                        "english": "Most people in the countryside [live on] fresh vegetables from their gardens.",
+                        "chinese": "乡下大多数人[靠]自家菜园的新鲜蔬菜生活。"
+                    },
+                    {
+                        "english": "We [live on] my dad's salary in our family.",
+                        "chinese": "我们一家人[靠]我爸爸的工资生活。"
+                    },
+                    {
+                        "english": "Many wild animals [live on] small plants and insects in the forest.",
+                        "chinese": "森林里很多野生动物[以]小型植物和昆虫为食。"
+                    }
+                ],
+                "synonyms": [
+                    "survive on",
+                    "depend on",
+                    "feed on"
+                ]
+            }
+        ],
+        "generated_by": "ark-coding-plan/doubao-seed-2.0-lite"
+    },
+    "off the coast": {
+        "word": "off the coast",
+        "american_ipa": "/ˈɔf ðə ˈkoʊst/",
+        "british_ipa": "/ˈɒf ðə ˈkəʊst/",
+        "derived_forms": [
+            "coastal (adj.)",
+            "coastline (n.)",
+            "offshore (adj./adv.)"
+        ],
+        "common_collocations": [
+            "an island off the coast",
+            "just off the coast",
+            "off the coast of Spain"
+        ],
+        "meanings": [
+            {
+                "part_of_speech": "phrase",
+                "explanation": "If something is [off the coast], it is located in the sea at a short distance from the land or shoreline.",
+                "examples": [
+                    {
+                        "english": "There is a small island [off the coast] where many seabirds live.",
+                        "chinese": "有一座小岛在[近海]，那里住着很多海鸟。"
+                    },
+                    {
+                        "english": "My uncle took us fishing on a boat [off the coast] last Saturday.",
+                        "chinese": "上周六叔叔带我们坐船去[近海]钓鱼。"
+                    },
+                    {
+                        "english": "The ship dropped anchor [off the coast] and waited for morning.",
+                        "chinese": "船在[近海]抛锚，等待天亮。"
+                    }
+                ],
+                "synonyms": [
+                    "offshore",
+                    "at sea"
+                ]
+            }
+        ],
+        "generated_by": "opencode/deepseek-v4-flash-free"
+    },
+    "reel": {
+        "word": "reel",
+        "american_ipa": "/riːl/",
+        "british_ipa": "/riːl/",
+        "derived_forms": [
+            "reeler (n.)",
+            "reeling (adj.)",
+            "unreel (v.)"
+        ],
+        "common_collocations": [
+            "fishing reel",
+            "film reel",
+            "a reel of thread"
+        ],
+        "meanings": [
+            {
+                "part_of_speech": "noun",
+                "explanation": "A [reel] is a round cylindrical object used for winding things such as thread, film, or fishing line around.",
+                "examples": [
+                    {
+                        "english": "My mom keeps her sewing thread on a wooden [reel].",
+                        "chinese": "我妈妈把缝纫线绕在一个木质[线轴]上。"
+                    },
+                    {
+                        "english": "We watched an old movie that was stored on a big metal [reel].",
+                        "chinese": "我们看了一部存放在大金属[胶片盘]里的老电影。"
+                    },
+                    {
+                        "english": "Dad replaced the old [reel] on his fishing rod yesterday.",
+                        "chinese": "爸爸昨天换掉了鱼竿上的旧[渔轮]。"
+                    }
+                ],
+                "synonyms": [
+                    "spool",
+                    "bobbin"
+                ]
+            }
+        ],
+        "generated_by": "ark-coding-plan/doubao-seed-2.0-lite"
+    },
+    "submarine": {
+        "word": "submarine",
+        "american_ipa": "/ˌsʌbməˈriːn/",
+        "british_ipa": "/ˈsʌbməriːn/",
+        "derived_forms": [
+            "submariner (n.)",
+            "submarine (v.)",
+            "submarining (n.)"
+        ],
+        "common_collocations": [
+            "nuclear submarine",
+            "military submarine",
+            "submarine cable"
+        ],
+        "meanings": [
+            {
+                "part_of_speech": "noun",
+                "explanation": "A [submarine] is a ship that can travel completely under the surface of the sea.",
+                "examples": [
+                    {
+                        "english": "I saw a huge [submarine] at the maritime museum.",
+                        "chinese": "我在海事博物馆看到了一艘巨大的[潜水艇]。"
+                    },
+                    {
+                        "english": "The [submarine] slowly dove under the sea surface.",
+                        "chinese": "这艘[潜水艇]慢慢潜到了海面之下。"
+                    },
+                    {
+                        "english": "Kids love reading stories about a talking [submarine].",
+                        "chinese": "孩子们喜欢读关于一艘会说话的[潜水艇]的故事。"
+                    }
+                ],
+                "synonyms": [
+                    "sub",
+                    "submersible",
+                    "U-boat"
+                ]
+            }
+        ],
+        "generated_by": "ark-coding-plan/doubao-seed-2.0-lite"
+    },
+    "break into two": {
+        "word": "break into two",
+        "american_ipa": "/breɪk ˈɪntuː tuː/",
+        "british_ipa": "/breɪk ˈɪntə tuː/",
+        "derived_forms": [
+            "broken into two (past participle)",
+            "breaking into two (present participle)"
+        ],
+        "common_collocations": [
+            "break something into two",
+            "break into two pieces",
+            "break in two"
+        ],
+        "meanings": [
+            {
+                "part_of_speech": "verb phrase",
+                "explanation": "If something [breaks into two], it separates or splits into two parts, often because of force or pressure.",
+                "examples": [
+                    {
+                        "english": "The cookie [broke into two] when I dropped it on the floor.",
+                        "chinese": "饼干掉到地上，[碎成了两半]。"
+                    },
+                    {
+                        "english": "Be careful, or the branch will [break into two].",
+                        "chinese": "小心点，不然树枝会[断成两截]。"
+                    },
+                    {
+                        "english": "The ice on the pond [broke into two] when we stepped on it.",
+                        "chinese": "我们踩上去的时候，池塘里的冰[裂成了两半]。"
+                    }
+                ],
+                "synonyms": [
+                    "split in two",
+                    "snap in half"
+                ]
+            }
+        ],
+        "generated_by": "ark-coding-plan/deepseek-v4-flash"
+    },
+    "sink": {
+        "word": "sink",
+        "american_ipa": "/sɪŋk/",
+        "british_ipa": "/sɪŋk/",
+        "derived_forms": [
+            "sunk (v.)",
+            "sinking (adj.)",
+            "sinkable (adj.)"
+        ],
+        "common_collocations": [
+            "kitchen sink",
+            "sink into",
+            "sink a ship"
+        ],
+        "meanings": [
+            {
+                "part_of_speech": "noun",
+                "explanation": "A [sink] is a large bowl-shaped fixture in a kitchen or bathroom that you use for washing your hands, dishes, or food.",
+                "examples": [
+                    {
+                        "english": "I washed my hands in the [sink].",
+                        "chinese": "我在[水槽]里洗了手。"
+                    },
+                    {
+                        "english": "Mom put the dirty dishes in the [sink].",
+                        "chinese": "妈妈把脏盘子放进了[水槽]。"
+                    },
+                    {
+                        "english": "Please don't leave your toys in the [sink].",
+                        "chinese": "别把你的玩具留在[水槽]里。"
+                    }
+                ],
+                "synonyms": [
+                    "basin",
+                    "washbasin"
+                ]
+            },
+            {
+                "part_of_speech": "verb",
+                "explanation": "To [sink] means to go down below the surface of water or another liquid, or to move downward.",
+                "examples": [
+                    {
+                        "english": "A stone will [sink] to the bottom of the pond.",
+                        "chinese": "石头会[沉]到池塘底部。"
+                    },
+                    {
+                        "english": "My feet [sink] into the soft sand at the beach.",
+                        "chinese": "我的脚[陷]进了海滩柔软的沙子里。"
+                    },
+                    {
+                        "english": "The sun began to [sink] below the horizon.",
+                        "chinese": "太阳开始[落]到地平线以下。"
+                    }
+                ],
+                "synonyms": [
+                    "descend",
+                    "drop",
+                    "go down"
+                ]
+            }
+        ],
+        "generated_by": "ark-coding-plan/deepseek-v4-flash"
+    },
+    "wreck": {
+        "word": "wreck",
+        "american_ipa": "/rɛk/",
+        "british_ipa": "/rɛk/",
+        "derived_forms": [
+            "wreckage (n.)",
+            "wrecker (n.)",
+            "wrecked (adj.)"
+        ],
+        "common_collocations": [
+            "wreck a car",
+            "wreck a plan",
+            "wreck everything"
+        ],
+        "meanings": [
+            {
+                "part_of_speech": "verb",
+                "explanation": "To [wreck] something means to damage or destroy it so badly that it can no longer be used or is completely ruined.",
+                "examples": [
+                    {
+                        "english": "The little boy [wrecked] his new toy truck by hitting it with a hammer.",
+                        "chinese": "那个小男孩用锤子敲打，把新玩具卡车给[弄坏了]。"
+                    },
+                    {
+                        "english": "A big storm [wrecked] our treehouse last night.",
+                        "chinese": "昨晚一场大暴风雨把我们的树屋[摧毁了]。"
+                    },
+                    {
+                        "english": "Please be careful not to [wreck] your little sister's drawing.",
+                        "chinese": "请小心点，别把妹妹的画给[弄坏了]。"
+                    }
+                ],
+                "synonyms": [
+                    "ruin",
+                    "destroy",
+                    "smash"
+                ]
+            }
+        ],
+        "generated_by": "opencode-go/deepseek-v4-flash"
+    },
+    "unsinkable": {
+        "word": "unsinkable",
+        "american_ipa": "/ˌʌnˈsɪŋkəbəl/",
+        "british_ipa": "/ˌʌnˈsɪŋkəbəl/",
+        "derived_forms": [
+            "unsinkably (adv.)",
+            "unsinkability (n.)"
+        ],
+        "common_collocations": [
+            "an unsinkable ship",
+            "an unsinkable spirit",
+            "be considered unsinkable"
+        ],
+        "meanings": [
+            {
+                "part_of_speech": "adjective",
+                "explanation": "An [unsinkable] ship or object is designed so that it cannot sink in water.",
+                "examples": [
+                    {
+                        "english": "My little toy boat is [unsinkable] and always floats in the bathtub.",
+                        "chinese": "我的小玩具船是[不会沉]的，在浴缸里总漂在水面上。"
+                    },
+                    {
+                        "english": "People called the Titanic an [unsinkable] ship, but it sank on its first trip.",
+                        "chinese": "人们把泰坦尼克号称为[永不沉没]的船，但它在首航中就沉没了。"
+                    },
+                    {
+                        "english": "Mom's [unsinkable] cheerfulness makes everyone in the family happy.",
+                        "chinese": "妈妈那[打不垮]的乐观让家里每个人都很开心。"
+                    }
+                ],
+                "synonyms": [
+                    "indestructible",
+                    "invincible"
+                ]
+            }
+        ],
+        "generated_by": "opencode/deepseek-v4-flash-free"
+    },
+    "iceberg": {
+        "word": "iceberg",
+        "american_ipa": "/ˈaɪsbɜːrɡ/",
+        "british_ipa": "/ˈaɪsbɜːɡ/",
+        "derived_forms": [
+            "icebergs (plural n.)"
+        ],
+        "common_collocations": [
+            "tip of the iceberg",
+            "a huge iceberg",
+            "floating iceberg"
+        ],
+        "meanings": [
+            {
+                "part_of_speech": "noun",
+                "explanation": "An [iceberg] is a very large piece of ice that floats in the sea, with most of it hidden under the water.",
+                "examples": [
+                    {
+                        "english": "We saw a huge [iceberg] floating in the ocean.",
+                        "chinese": "我们在海上看到了一座巨大的[冰山]。"
+                    },
+                    {
+                        "english": "Most of an [iceberg] is hidden under the water.",
+                        "chinese": "[冰山]的大部分都藏在水下。"
+                    },
+                    {
+                        "english": "The explorer took a photo of a beautiful [iceberg].",
+                        "chinese": "探险家拍了一张漂亮的[冰山]照片。"
+                    }
+                ],
+                "synonyms": [
+                    "ice mass",
+                    "berg"
+                ]
+            }
+        ],
+        "generated_by": "zhipuai-coding-plan/glm-5-turbo"
+    },
+    "diver": {
+        "word": "diver",
+        "american_ipa": "/ˈdaɪvər/",
+        "british_ipa": "/ˈdaɪvər/",
+        "derived_forms": [
+            "dive (v.)",
+            "diving (n.)",
+            "divers (plural n.)"
+        ],
+        "common_collocations": [
+            "scuba diver",
+            "a professional diver",
+            "a deep-sea diver"
+        ],
+        "meanings": [
+            {
+                "part_of_speech": "noun",
+                "explanation": "A [diver] is a person who swims or works underwater, often using special equipment to help them breathe.",
+                "examples": [
+                    {
+                        "english": "The [diver] put on her mask and jumped into the clear blue water.",
+                        "chinese": "[潜水员]戴上面镜，跳进了清澈湛蓝的水里。"
+                    },
+                    {
+                        "english": "My uncle is a [diver] and he finds beautiful shells under the sea.",
+                        "chinese": "我叔叔是一名[潜水员]，他在海底能找到漂亮的贝壳。"
+                    },
+                    {
+                        "english": "The [diver] wore a wet suit to keep warm in the cold ocean.",
+                        "chinese": "[潜水员]穿着潜水服，在冰冷的海水里保暖。"
+                    }
+                ],
+                "synonyms": [
+                    "underwater explorer"
+                ]
+            }
+        ],
+        "generated_by": "zhipuai-coding-plan/glm-5-turbo"
+    },
+    "shipwreck": {
+        "word": "shipwreck",
+        "american_ipa": "/ˈʃɪpˌrɛk/",
+        "british_ipa": "/ˈʃɪp.rɛk/",
+        "derived_forms": [
+            "shipwrecked (adj.)",
+            "shipwrecks (n. pl.)"
+        ],
+        "common_collocations": [
+            "discover a shipwreck",
+            "a shipwreck survivor",
+            "explore a shipwreck"
+        ],
+        "meanings": [
+            {
+                "part_of_speech": "noun",
+                "explanation": "A [shipwreck] is a ship that has been destroyed or sunk in an accident at sea.",
+                "examples": [
+                    {
+                        "english": "The divers found an old [shipwreck] full of treasure.",
+                        "chinese": "潜水员发现了一艘装满宝藏的古老[沉船]。"
+                    },
+                    {
+                        "english": "We learned about a famous [shipwreck] in our history class.",
+                        "chinese": "我们在历史课上了解了一艘著名的[沉船]。"
+                    },
+                    {
+                        "english": "The old [shipwreck] has been under the sea for many years.",
+                        "chinese": "那艘古老的[沉船]已经在海底待了很多年了。"
+                    }
+                ],
+                "synonyms": [
+                    "wreck",
+                    "sunken ship",
+                    "sunken vessel"
+                ]
+            }
+        ],
+        "generated_by": "opencode/deepseek-v4-flash-free"
+    },
+    "on board": {
+        "word": "on board",
+        "american_ipa": "/ɑːn bɔːrd/",
+        "british_ipa": "/ɒn bɔːd/",
+        "derived_forms": [
+            "onboard (adj./adv.)"
+        ],
+        "common_collocations": [
+            "get on board",
+            "go on board",
+            "be on board"
+        ],
+        "meanings": [
+            {
+                "part_of_speech": "prepositional phrase",
+                "explanation": "If you are [on board] a ship, plane, train, or other vehicle, you are on or in it.",
+                "examples": [
+                    {
+                        "english": "All passengers please get [on board] the plane now.",
+                        "chinese": "所有乘客请现在[登机]。"
+                    },
+                    {
+                        "english": "We were [on board] the ship when it started to rain.",
+                        "chinese": "开始下雨的时候我们已经[在船上]了。"
+                    },
+                    {
+                        "english": "The captain asked all visitors to go [on board] before the ship left.",
+                        "chinese": "船长要求所有游客在开船前[上船]。"
+                    }
+                ],
+                "synonyms": [
+                    "aboard",
+                    "onboard",
+                    "on"
+                ]
+            },
+            {
+                "part_of_speech": "adverbial phrase",
+                "explanation": "If you are [on board] with a plan, idea, or group, you agree to support it or join it.",
+                "examples": [
+                    {
+                        "english": "My mom is [on board] with our plan to have a picnic this Saturday.",
+                        "chinese": "我妈妈[赞成]我们这周六去野餐的计划。"
+                    },
+                    {
+                        "english": "All my friends got [on board] with my idea to build a small treehouse.",
+                        "chinese": "我所有的朋友都[支持]我搭建小树屋的想法。"
+                    },
+                    {
+                        "english": "At first she said no, but now she's [on board] with our trip.",
+                        "chinese": "她一开始不同意，但现在她[同意]我们的旅行了。"
+                    }
+                ],
+                "synonyms": [
+                    "onboard",
+                    "in agreement",
+                    "agreeing"
+                ]
+            }
+        ],
+        "generated_by": "ark-coding-plan/doubao-seed-2.0-lite"
+    }
+}

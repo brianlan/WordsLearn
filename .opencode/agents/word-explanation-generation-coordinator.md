@@ -11,6 +11,7 @@ permission:
     "*": deny
     word-explanation-generator-single: "allow"
     word-explanation-generator: "allow"
+    prepositional-verb-explanation-generator-single: "allow"
 ---
 # Role
 
@@ -34,6 +35,7 @@ Final output must be the accepted JSON string only. Do not include markdown, cod
 
 * word-explanation-generator-single
 * word-explanation-generator
+* prepositional-verb-explanation-generator-single
 
 # Required JSON Structure
 
@@ -78,12 +80,28 @@ Reject the result if any of these problems exist:
 
 Reject if bracket usage is wrong.
 
+For `word-explanation-generator-single` and `word-explanation-generator`:
+
 1. Each English explanation must contain exactly one bracketed target word.
 2. Each English example must contain exactly one bracketed target word.
 3. English brackets must wrap only the target word or an allowed inflected form.
 4. Do not bracket extra words such as articles, prepositions, or phrases.
 5. Each Chinese translation must contain exactly one bracketed natural Chinese equivalent.
 6. Chinese brackets should wrap the core translated word, not a long explanatory phrase.
+
+For `prepositional-verb-explanation-generator-single`:
+
+1. The JSON `word` field must preserve the full input expression, not only the head verb.
+2. Each English explanation must contain exactly one bracketed target expression.
+3. Each English example must contain exactly one bracketed target expression.
+4. English brackets must wrap the complete phrasal/prepositional verb or verb pattern, including required particles or prepositions.
+5. If the input expression contains a placeholder such as `sb`, `sth`, `someone`, or `something`, the bracketed text may use a natural filled form such as `[wake me up]`, `[ask my teacher for help]`, or `[share my toys with my sister]`.
+6. If the phrase is inflected, bracket the whole inflected phrase, such as `[woke up]`, `[looks after]`, or `[ran out of]`.
+7. Reject outputs that explain only the head verb, bracket only the head verb, omit the required particle/preposition, or use examples where the phrase meaning is not shown.
+8. Each Chinese translation must contain exactly one bracketed natural Chinese equivalent.
+9. Chinese brackets should wrap the core translated phrase, not a long explanatory sentence.
+
+Single-word examples:
 
 Good:
 

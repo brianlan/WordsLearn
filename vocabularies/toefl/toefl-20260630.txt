@@ -1,0 +1,203 @@
+# 一、天文学
+constellation
+comet
+asteroid
+eclipse
+galaxy
+meteor
+planet
+aurora
+supernova
+nebula
+satellite
+orbit
+telescope
+gravity
+# 二、艺术
+perspective
+portrait
+sculpture
+abstract
+impressionism
+masterpiece
+sketch
+realism
+watercolor
+# 三、历史
+civilization
+revolution
+empire
+monarchy
+democracy
+war
+revolutionize
+colonization
+independence
+slavery
+ancient
+culture
+empire
+# 四、Biology (生物)
+organism
+genetics
+evolution
+ecosystem
+cell
+DNA
+adaptation
+metabolism
+reproduction
+biodiversity
+habitat
+photosynthesis
+extinction
+ecology
+mutation
+respiration
+hibernation
+zoology
+# 五、Education (教育)
+curriculum
+tuition
+diploma
+distance learning
+scholarship
+academic
+enrollment
+seminar
+academic year
+thesis
+# 六、考古 Archeology
+artifact
+excavation
+antiquity
+archaeologist
+excavation site
+prehistoric
+archaeology
+cultural relic
+geologist
+ruins
+equipment
+historical site
+pottery
+# 七、Internet (互联网)
+firewall
+phishing
+router
+cache
+database
+# 八、Sport (体育)
+referee
+championship
+tournament
+equipment
+# 九、Celebrity (名人)
+celebrity
+comedian
+fashion designer
+# 十、Architecture (建筑)
+skyscraper
+column
+arch
+dome
+facade
+blueprint
+balcony
+foundation
+turret
+gable
+# 十一、Geography (地理)
+continent
+equator
+longitude
+latitude
+topography
+glacier
+tectonic plates
+peninsula
+delta
+plateau
+# 十二、Humanities (人文)
+philosophy
+literature
+history
+art
+culture
+language
+religion
+mythology
+theater
+anthropology
+# 十三、Food and Drink (饮食)
+cuisine
+appetizer
+dessert
+beverage
+recipe
+seasoning
+barista
+buffet
+sommelier
+condiment
+# 十四、Geology (地质学)
+mineral
+volcano
+earthquake
+sediment
+geology
+erosion
+magma
+fossil
+lava
+tectonic
+# 十五、Anthropology (人类学)
+culture
+society
+kinship
+ethnicity
+tradition
+globalization
+indigenous
+ritual
+gender
+identity
+# 十六、Ecology (生态学)
+ecosystem
+biodiversity
+# 十七、Meteorology (气象学)
+typhoon
+tornado
+climate
+precipitation
+humidity
+forecast
+drought
+thunderstorm
+# 十八、Animal (动物)
+mammal
+reptile
+amphibian
+carnivore
+herbivore
+omnivore
+predator
+prey
+migration
+hibernation
+# 十九、Politics (政治)
+democracy
+dictatorship
+sovereignty
+communism
+# 二十、Music (音乐)
+melody
+rhythm
+harmony
+genre
+tempo
+beat
+chorus
+instrument
+composer
+lyrics

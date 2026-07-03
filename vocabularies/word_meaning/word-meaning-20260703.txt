@@ -1,0 +1,68 @@
+# 托福冲刺班听力
+prediction
+trim
+senator
+auditorium
+literature
+lecture
+loan
+catalog
+essay
+accomplished
+portrayal
+poetry
+poem
+cell
+semester
+environment
+on account of
+exhibit
+reptile
+rather than
+mandatory
+cooperation
+budget
+link
+demanding
+ramp
+handicap
+handicapped
+intercom
+orchestra
+intricate
+homesickness
+
+# REF 5A
+laser
+investigation
+investigator
+investigate
+facility
+flight
+fingerprint
+footprint
+analyze
+disease
+expert
+germ
+bacteria
+gene
+DNA
+characteristic
+heat
+factory
+pass
+conclusion
+sequence
+cue
+characteristic
+cause
+germy
+heated
+expertise
+work out
+find the cause
+give an example
+give a conclusion
+FBI
+information about

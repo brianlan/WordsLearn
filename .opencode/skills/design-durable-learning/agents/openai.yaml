@@ -1,0 +1,14 @@
+interface:
+  display_name: "\u6301\u4E45\u5B66\u4E60\u8BBE\u8BA1\u5E08"
+  short_description: "\u8BBE\u8BA1\u3001\u8BCA\u65AD\u5E76\u6539\u8FDB\u9762\u5411\
+    \u957F\u671F\u4FDD\u6301\u3001\u8FA8\u6790\u3001\u8FC1\u79FB\u4E0E\u81EA\u52A8\
+    \u5316\u7684\u5B66\u4E60\u7CFB\u7EDF"
+  default_prompt: Use $design-durable-learning to turn this learning goal or problem
+    into a durable learning design.
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true

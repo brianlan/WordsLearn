@@ -62,6 +62,7 @@ def main(args) -> None:
         args.agent,
         num_workers=args.num_workers,
         existing_words=existing_words,
+        explanation_save_path=args.explanation_save_path,
     )
     write_explanations(explanations, args.explanation_save_path)
 
@@ -100,6 +101,7 @@ def generate_explanations(
     agent: str,
     num_workers: int = 1,
     existing_words: set[str] | None = None,
+    explanation_save_path: Path | None = None,
 ) -> dict[str, dict]:
     logger.info(f"Generating explanations for {len(vocabulary)} words.")
     existing_words = existing_words or set()
@@ -128,6 +130,8 @@ def generate_explanations(
             word, result = future.result()
             if result is not None:
                 explanations[word] = result
+                if explanation_save_path is not None:
+                    write_explanations(explanations, explanation_save_path)
 
     return explanations
 
@@ -142,11 +146,16 @@ def get_explanation(word: str, get_model: Callable[[], str], agent: str, max_ret
     for attempt in range(max_retries + 1):
         model = get_model()
         prompt = f"Generate the explanation for word: {word} using subagent_type: {agent}."
-        result = subprocess.run(
-            ["opencode", "run", "--pure", "-m", model, "--agent", "word-explanation-generation-coordinator", prompt],
-            capture_output=True,
-            text=True,
-        )
+        try:
+            result = subprocess.run(
+                ["opencode", "run", "--pure", "-m", model, "--agent", "word-explanation-generation-coordinator", prompt],
+                capture_output=True,
+                text=True,
+                timeout=300,
+            )
+        except subprocess.TimeoutExpired:
+            logger.error("opencode timed out after 300s (attempt {})", attempt + 1)
+            continue
         if result.returncode != 0:
             logger.error("opencode failed (attempt {}): {}", attempt + 1, result.stderr.strip())
             continue

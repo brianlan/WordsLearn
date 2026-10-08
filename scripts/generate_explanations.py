@@ -3,6 +3,7 @@ import concurrent.futures
 import itertools
 import json
 import json_repair
+import os
 import subprocess
 import threading
 from collections.abc import Callable
@@ -137,9 +138,18 @@ def generate_explanations(
 
 
 def write_explanations(explanations: dict[str, dict], explanation_save_path: Path) -> None:
-    with open(explanation_save_path, "w", encoding="utf-8") as f:
-        json.dump(explanations, f, ensure_ascii=False)
-    logger.info(f"Successfully write explanations ({len(explanations)} words) to {explanation_save_path}.")
+    merged = {}
+    if explanation_save_path.exists():
+        try:
+            merged.update(read_json(explanation_save_path))
+        except Exception as e:
+            logger.warning(f"Failed to read existing explanations from {explanation_save_path}: {e}")
+    merged.update(explanations)
+    tmp_path = explanation_save_path.with_name(f"{explanation_save_path.name}.tmp")
+    with open(tmp_path, "w", encoding="utf-8") as f:
+        json.dump(merged, f, ensure_ascii=False)
+    os.replace(tmp_path, explanation_save_path)
+    logger.info(f"Successfully write explanations ({len(merged)} words) to {explanation_save_path}.")
 
 
 def get_explanation(word: str, get_model: Callable[[], str], agent: str, max_retries: int = 3) -> dict:

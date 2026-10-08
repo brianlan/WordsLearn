@@ -82,6 +82,18 @@ def test_generate_explanations_writes_after_each_word(tmp_path: Path, monkeypatc
     assert sorted(json.loads(save_path.read_text())) == ["apple", "banana"]
 
 
+def test_write_explanations_keeps_existing_entries(tmp_path: Path):
+    save_path = tmp_path / "out.json"
+    save_path.write_text(json.dumps({"apple": {"word": "apple"}, "banana": {"word": "old"}}))
+
+    write_explanations({"banana": {"word": "new"}, "cherry": {"word": "cherry"}}, save_path)
+
+    written = json.loads(save_path.read_text())
+    assert sorted(written) == ["apple", "banana", "cherry"]
+    assert written["banana"] == {"word": "new"}
+    assert not list(tmp_path.glob("*.tmp"))  # atomic replace leaves no temp file behind
+
+
 def test_generate_explanations_help():
     result = subprocess.run(
         [sys.executable, "-m", "scripts.generate_explanations", "--help"],

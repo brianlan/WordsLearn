@@ -3,6 +3,7 @@ import concurrent.futures
 import itertools
 import json
 import json_repair
+import os
 import subprocess
 import threading
 from collections.abc import Callable
@@ -62,6 +63,7 @@ def main(args) -> None:
         args.agent,
         num_workers=args.num_workers,
         existing_words=existing_words,
+        explanation_save_path=args.explanation_save_path,
     )
     write_explanations(explanations, args.explanation_save_path)
 
@@ -100,6 +102,7 @@ def generate_explanations(
     agent: str,
     num_workers: int = 1,
     existing_words: set[str] | None = None,
+    explanation_save_path: Path | None = None,
 ) -> dict[str, dict]:
     logger.info(f"Generating explanations for {len(vocabulary)} words.")
     existing_words = existing_words or set()
@@ -128,25 +131,41 @@ def generate_explanations(
             word, result = future.result()
             if result is not None:
                 explanations[word] = result
+                if explanation_save_path is not None:
+                    write_explanations(explanations, explanation_save_path)
 
     return explanations
 
 
 def write_explanations(explanations: dict[str, dict], explanation_save_path: Path) -> None:
-    with open(explanation_save_path, "w", encoding="utf-8") as f:
-        json.dump(explanations, f, ensure_ascii=False)
-    logger.info(f"Successfully write explanations ({len(explanations)} words) to {explanation_save_path}.")
+    merged = {}
+    if explanation_save_path.exists():
+        try:
+            merged.update(read_json(explanation_save_path))
+        except Exception as e:
+            logger.warning(f"Failed to read existing explanations from {explanation_save_path}: {e}")
+    merged.update(explanations)
+    tmp_path = explanation_save_path.with_name(f"{explanation_save_path.name}.tmp")
+    with open(tmp_path, "w", encoding="utf-8") as f:
+        json.dump(merged, f, ensure_ascii=False)
+    os.replace(tmp_path, explanation_save_path)
+    logger.info(f"Successfully write explanations ({len(merged)} words) to {explanation_save_path}.")
 
 
 def get_explanation(word: str, get_model: Callable[[], str], agent: str, max_retries: int = 3) -> dict:
     for attempt in range(max_retries + 1):
         model = get_model()
         prompt = f"Generate the explanation for word: {word} using subagent_type: {agent}."
-        result = subprocess.run(
-            ["opencode", "run", "--pure", "-m", model, "--agent", "word-explanation-generation-coordinator", prompt],
-            capture_output=True,
-            text=True,
-        )
+        try:
+            result = subprocess.run(
+                ["opencode", "run", "--pure", "-m", model, "--agent", "word-explanation-generation-coordinator", prompt],
+                capture_output=True,
+                text=True,
+                timeout=300,
+            )
+        except subprocess.TimeoutExpired:
+            logger.error("opencode timed out after 300s (attempt {})", attempt + 1)
+            continue
         if result.returncode != 0:
             logger.error("opencode failed (attempt {}): {}", attempt + 1, result.stderr.strip())
             continue

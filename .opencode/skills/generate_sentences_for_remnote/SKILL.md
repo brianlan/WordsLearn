@@ -4,7 +4,7 @@ description: |
   Generate English vocabulary explanations and Remnote flashcards from a plain-text vocabulary list.
   Use this skill whenever the user wants to turn a vocabulary .txt file into Remnote flashcards,
   generate word explanations and example sentences, run the `generate_explanations` and
-  `generate_flashcards_from_expalantions` scripts together, or process vocabulary files for spaced-repetition cards.
+  `generate_flashcards_from_explanations` scripts together, or process vocabulary files for spaced-repetition cards.
   Trigger on phrases like "make flashcards", "generate explanations", "Remnote cards", "vocabulary to flashcards",
   or any mention of processing a vocabulary file through the WordsLearn pipeline.
 ---
@@ -14,7 +14,7 @@ description: |
 This skill runs the two-step WordsLearn pipeline that turns a plain-text vocabulary list into Remnote flashcards:
 
 1. `python -m scripts.generate_explanations` — generate a JSON file of word explanations, IPA, examples, and synonyms.
-2. `python -m scripts.generate_flashcards_from_expalantions` — convert that JSON into a `.txt` file of Remnote flashcards.
+2. `python -m scripts.generate_flashcards_from_explanations` — convert that JSON into a `.txt` file of Remnote flashcards.
 
 ## Usage
 
@@ -67,7 +67,7 @@ python -m scripts.generate_explanations \
   -i vocabularies/word_meaning/word-meaning-20260715.txt \
   --explanation-save-path ./explanations/word_meaning/word_meaning_20260715.json
 
-python -m scripts.generate_flashcards_from_expalantions \
+python -m scripts.generate_flashcards_from_explanations \
   -e ./explanations/word_meaning/word_meaning_20260715.json \
   -o ./output/word-meaning-20260715.txt
 ```

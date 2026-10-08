@@ -87,7 +87,7 @@ def main() -> None:
     ])
 
     run([
-        sys.executable, "-m", "scripts.generate_flashcards_from_expalantions",
+        sys.executable, "-m", "scripts.generate_flashcards_from_explanations",
         "-e", str(explanation_path),
         "-o", str(output_path),
     ])
